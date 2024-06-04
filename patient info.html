@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medsev - Healthcare Clinic </title>
+    <title>Medsev - Healthcare Clinic</title>
     
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-   
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <!-- start nav -->
 <nav class="header ">
-    <div id="navbar" >
-        <nav class="navbar navbar-expand-lg " >
-            <div class="container" >
+    <div id="navbar">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
                 <a class="navbar-brand" href="index.html"><img src="images/logo.png"  alt=""></a>
                 <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon">
@@ -34,11 +33,11 @@
                     </ul>
                     <div class="navbar__log">
                         <a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
-                    </div> <!-- navbar__log -->
+                    </div>
                 </div>
             </div>
         </nav>
-    <div>
+    </div>
 </nav>  
 <!-- end nav -->
 
@@ -52,18 +51,18 @@
                      <a href="index admin.html"><span>Home</span></a>
                     <i class="fa-solid fa-chevron-right"></i>
                     <span>patient</span>
-                </div> <!-- table__cell__text__plan -->
-            </div> <!-- table__cell__img -->
-        </div> <!-- table__cell -->
-    </div> <!-- container -->
-</section> <!-- table-cell -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- end table-cell -->
 
 <section class="appointment patient-infoo">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <div class="doctor__apps d-flex justify-content-center ">
+                <div class="doctor__apps d-flex justify-content-center">
                     <div class="doctor__app doctor__app__pe my-3">
                         <h2>Edit Patient's Data</h2>
                         <div class="row">
@@ -71,28 +70,27 @@
                                 <div class="meet__doctor__search">
                                     <div class="meet__doctor__search__icon">
                                         <i class="icofont icofont-business-man-alt-1"></i>
-                                    </div> <!-- meet__doctor__search__icon -->
+                                    </div>
                                     <form action="#" class="meet__doctor__search__meet">
-                                        <label for="nameapp">name</label>
+                                        <label for="nameapp">Name</label>
                                         <input type="text" id="nameapp" placeholder="Enter Your Name" name="search">
                                     </form>
-                                </div> <!-- meet__doctor__search -->
-                            </div> <!-- col-12 -->
-                            <!-- الأكواد الأخرى هنا -->
-                        </div> <!-- row -->
-                        <div class="doctor__app__btn">
-                            <button class="btn__app" type="submit">submit</button>
+                                </div>
+                            </div>
                         </div>
-                    </div> <!-- doctor__app -->
+                        <div class="doctor__app__btn">
+                            <button class="btn__app" type="submit">Submit</button>
+                        </div>
+                    </div>
                     <div class="doctor__app__img">
                         <img src="images/3.png" alt="">
-                    </div> <!-- doctor__app__img -->
-                </div> <!-- doctor__apps -->
-            </div> <!-- col-lg-6 -->
+                    </div>
+                </div>
+            </div>
             <div class="col-12">
                 <div class="appointment__teb">
                     <table class="table mt-5 text-center table-bordered table-striped">
-                        <thead >
+                        <thead>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -100,14 +98,37 @@
                             <th>Update</th>
                             <th>Delete</th>
                         </thead>
-                        <tbody id="tBody"></tbody> <!-- يتم ملء هذا الجزء من الجدول بالبيانات -->
+                        <tbody id="tBody"></tbody>
                     </table>
-                </div> <!-- appointment__teb -->
-            </div> <!-- col-12 -->
-        </div> <!-- row -->
-    </div> <!-- container -->
-</section> <!-- appointment -->
-       
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popup Modal -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Patient's Data</h2>
+        <form id="editForm">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="FirstName" required>
+            <label for="middleName">Middle Name</label>
+            <input type="text" id="middleName" name="MiddleName">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="LastName" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required>
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="Phone" required>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+
 <!-- ///////////////////  js /////////////////////// -->
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
@@ -156,10 +177,135 @@
 
         // Function to update a patient
         window.updatePatient = function (patientId) {
-            // Here you can implement the logic to open a modal or form to update patient data
-            console.log(`Update patient with ID ${patientId}`);
+            // Fetch patient data by ID
+            fetch(`https://apis-amirican-university.quickly-egypt.com/public/api/patients/${patientId}`)
+                .then(response => response.json())
+                .then(patient => {
+                    // Fill form with patient data
+                    document.getElementById("firstName").value = patient.FirstName;
+                    document.getElementById("middleName").value = patient.MiddleName || '';
+                    document.getElementById("lastName").value = patient.LastName;
+                    document.getElementById("email").value = patient.Email;
+                    document.getElementById("phone").value = patient.Phone;
+
+                    document.getElementById("editForm").onsubmit = function (event) {
+                        event.preventDefault();
+                        // Update patient data
+                        const updatedPatient = {
+                            FirstName: document.getElementById("firstName").value,
+                            MiddleName: document.getElementById("middleName").value,
+                            LastName: document.getElementById("lastName").value,
+                            Email: document.getElementById("email").value,
+                            Phone: document.getElementById("phone").value
+                        };
+
+                        fetch(`https://apis-amirican-university.quickly-egypt.com/public/api/patients/${patientId}`, {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(updatedPatient)
+                        })
+                        .then(response => response.json())
+                        .then(result => {
+                            console.log(result);
+                            // Close modal and refresh table or show success message
+                            modal.style.display = "none";
+                        })
+                        .catch(error => console.error(error));
+                    };
+                })
+                .catch(error => console.error(error));
+
+            // Show modal
+            modal.style.display = "block";
+        };
+
+        // Modal functionality
+        const modal = document.getElementById("editModal");
+        const span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         };
     });
 </script>
+
+<style>
+    /* Modal styles */
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgba(0,0,0,0.5); 
+        padding-top: 60px;
+    }
+    .modal-content {
+        background-color: #fff;
+        margin: 5% auto; 
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        width: 80%; 
+        max-width: 600px;
+        position: relative;
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+    }
+    .modal-content h2 {
+        margin-top: 0;
+        color: #333;
+    }
+    .modal-content form {
+        display: flex;
+        flex-direction: column;
+    }
+    .modal-content label {
+        margin: 10px 0 5px;
+        color: #555;
+    }
+    .modal-content input[type="text"],
+    .modal-content input[type="email"] {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .modal-content button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+    .modal-content button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 </body>
 </html>
