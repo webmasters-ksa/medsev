@@ -17,3 +17,5 @@ The main objectives of MedSev are to streamline the process of accessing medical
 How to Contribute:
 
 Contributions to MedSev are welcome! Whether it's bug fixes, feature enhancements, or suggestions for improvement, feel free to fork the repository and submit pull requests. Together, we can make MedSev a valuable tool for both healthcare providers and patients.
+
+Development by : Abdelrahman Mohamed 2024
