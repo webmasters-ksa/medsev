@@ -1,0 +1,10 @@
+.login .signup__form #checkbox{
+    width: 3%;
+}
+.login .signup__form p{
+    display: inline-block;
+   
+}
+.login .signup__form p:last-child a{
+    border-bottom: none;
+}

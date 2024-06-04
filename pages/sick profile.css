@@ -1,0 +1,7 @@
+.patient-profile .doctorprofile__text__contact{
+    padding-bottom: 20px;
+}
+.patient__profile {
+display: flex;
+justify-content: end;
+}

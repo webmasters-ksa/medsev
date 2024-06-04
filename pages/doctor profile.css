@@ -1,0 +1,39 @@
+.doctorinfo2{
+    background-image: url(../images/3\ \(2\).png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 30px 0px #dddddda6;
+
+
+}
+
+.doctorinfo .patient__profile__sensor {
+    padding: 20px 0px;
+}
+.doctorinfo .patient__profile__sensor i{
+    color: #0046c0;
+    font-size: 60px;
+    margin-top: 8px;
+}
+.doctorinfo .patient__profile__sensor h3{
+    font-size: 40px;
+    font-family:gothamseven ;
+    color: #0046c0;
+    margin: 10px 0px;
+    
+}
+.doctorinfo .patient__profile__sensor p{
+    font-size: 25px;
+    font-family:gothamseven ;
+    color: #4a6f8a;
+    text-transform: capitalize;
+    
+}
+.sick-prof{
+    padding-bottom: 70px;
+}
+
+
+

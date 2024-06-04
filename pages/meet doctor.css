@@ -1,0 +1,97 @@
+.meet-doctor{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 75%;
+    box-shadow: 0px 0px 20px 0px #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 30px 50px;
+    max-width: 970px; 
+}
+
+
+.choose-doctor{
+    padding: 120px 0px;
+}
+
+.choose__doctor{
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0px 0px 20px 0px #ddd;
+    border-radius: 10px;
+    margin: 0px 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    
+
+}
+.choose__doctor .choose__doctor__img{
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.choose__doctor .choose__doctor__img:hover .choose__doctor__overlay{
+    opacity: 1;
+    transform: translateY(-15px);
+  
+}
+.choose__doctor .choose__doctor__img a{
+    position: relative;
+    top: 91%;
+    transform: translatey(10px);
+    transition: all 0.5s;
+   
+}
+
+.choose__doctor__img .choose__doctor__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.choose__doctor__img .choose__doctor__overlay .doctor__text__btn--btn{
+    padding: 10px 18px;
+    border: 2px solid transparent;
+    color:#0046c0;
+    background-color: #ffffff;
+    font-family:gothamseven ;
+    font-size: 14px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-right: 12px;
+    transition: 0.5s all ease;
+    
+}
+.choose__doctor__img .choose__doctor__overlay .doctor__text__btn--btn:hover{
+    color: #ffffff;
+    background-color: #111111;
+}
+.choose__doctor .choose__doctor__text{
+        padding: 20px 0px;
+}
+
+.choose__doctor .choose__doctor__text h2{
+    text-transform: capitalize;
+    font-size: 19px;
+    font-family:gothamseven ;
+    margin-bottom: 10px;
+}
+.choose__doctor .choose__doctor__text h2 a{
+    color: #111111;
+}
+.choose__doctor .choose__doctor__text p{
+    text-transform: capitalize;
+    font-size: 15px;
+    color: #4a6f8a;
+   
+}
+
+
+

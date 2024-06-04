@@ -1,0 +1,86 @@
+.meet__doctor__search__meet label{
+    font-size: 14px;
+    font-family:gothamfive ;
+   margin-bottom: 5px;
+    color: #4a6f8a;
+    text-transform: capitalize;
+
+  }
+  .meet__doctor__search__meet input {
+    width: 100%;
+    padding: 7px 0px;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 2px solid #ccd9f2;
+    outline: none;
+    font-size: 14px;
+    font-family:gothamfive ;
+
+
+
+  }
+  .meet__doctor__search__meet input:focus{
+    border-bottom: 2px solid #0046c0;
+  }
+  .meet__doctor__search__meet input::placeholder{
+    font-size: 13px;
+    font-family:gothamseven ;
+    color: #4a6f8a;
+    text-transform: capitalize;
+  }
+
+
+  .meet__doctor__search__meet .form-control {
+    width: 100%;
+    padding: 7px 0px;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 2px solid #ccd9f2;
+    outline: none;
+    font-size: 14px;
+    font-family:gothamseven ;
+    color: #4a6f8a;
+    border-radius: 0;
+}
+
+.meet__doctor__search__meet.form-control:focus {
+    border: 0;
+    border-bottom: 2px solid #0046c0;
+    outline: none;
+    box-shadow: none;
+
+}
+ .meet__doctor__search  {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding:0px 20px;
+ 
+}
+.meet__doctor__search i{
+   font-size:50px;
+   color: #0046c0;
+}
+.meet__doctor__search__meet{
+  width: 100%;
+}
+textarea {
+  width: 100%;
+  height: 220px;
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-radius: 3px;
+  box-shadow: none;
+  border: 1px solid #e5e5e5;
+  outline: none;
+  font-size: 15px;
+  font-family:gothamfive ;
+  resize: none;
+  
+}
+ textarea::placeholder{
+  font-size: 13px;
+  font-family:gothamseven ;
+    text-transform: capitalize;
+    color: #4a6f8a;
+}

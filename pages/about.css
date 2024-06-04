@@ -1,0 +1,52 @@
+.about-patient .about__patinet__text{
+    margin-top: 50px;
+}
+.about-patient .about__patinet__text h2{
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family:gothamseven ;
+    margin-bottom: 20px;
+}
+
+.about-patient .about__patinet__text p{
+    font-family:gothamfive ;
+    margin-bottom: 20px;
+    color: #4a6f8a;
+    font-size: 17px;
+    
+}
+.about-patient .about__patinet__text ul li{
+    font-family:gothamfive ;
+    padding: 10px 0px;
+    color: #4a6f8a
+    
+}
+.about-patient .about__patinet__text ul li span{
+    color: black;
+    font-family:gothamseven ;
+    display:inline-block;
+    font-size: 18px;
+
+}
+.about-patient .about__patinet__text ul li i{
+    font-size: 18px;
+    display: inline-block;
+        margin-right: 10px;
+        color: #0046c0;
+}
+.about-patient .about__patinet__text ul li p{
+    margin-left: 25px;
+    margin-top: 10px;
+    font-size: 17px;
+
+}
+
+.about-patient .about__patinet__text span:last-child{
+    color: #4a6f8a;
+    font-family:gothamfive ;
+    font-size: 18px;
+    display:inline-block;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}

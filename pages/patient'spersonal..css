@@ -1,0 +1,32 @@
+.prescription{
+    padding: 50px 0px;
+}
+.table-cell.patient-personal{
+    height: 350px;
+}
+
+.meet__doctor__dec{
+    padding: 25px 0px;
+    border-bottom: 1px solid #ccc;
+}
+.meet__doctor__dec li{
+    font-size: 18px;
+
+    text-transform: capitalize;
+    line-height: 3;
+}
+
+.meet__doctor__dec li {
+    color: #0046c0;
+    font-family:gothamseven ;
+
+}
+
+.meet__doctor__dec li span{
+    color: black;
+    margin-left: 15px;
+}
+
+.prescription .meet__doctor__search{
+    padding: 25px 0px;
+}
