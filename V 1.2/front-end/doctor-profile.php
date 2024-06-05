@@ -1,80 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medsev - Healthcare Clinic </title>
-    
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-   
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-
-
-<!-- start nav -->
-<nav class="header ">
-
-    <div id="navbar" >
-      <nav class="navbar navbar-expand-lg " >
-     
-        <div class="container" >
-          <a class="navbar-brand" href="index.php"><img src="images/logo.png"  alt=""></a>
-          
-    
-    
-          <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon">
-                <svg viewBox="0 0 175 80" width="45" height="35">
-                    <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                    <rect y="30" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                    <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                </svg>
-            </span>
-          
-        </button>
-    
-    
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-            
-        
-              <li class="nav-item">
-                <a class="nav-link" href="contact us.php">Contact Us</a>
-              </li>
-       
-              <li class="dropdown">
-                <a class="dropdown__btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="icofont icofont-settings"></i> <span>Settings</span> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="update-patient.php">Update Information</a></li>
-                    <li><a class="dropdown-item" href="login.php">Logout</a></li>
-                </ul>
-            </li>
-            </ul>
-            <div class="navbar__log">
-              <a href="login.php"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
-  
-            </div> <!-- navbar__log -->
-  
-          </div>
-
-
-   
-        </div>
-      </nav>
-    <div>
-     
-    </nav>  
-      <!-- end nav -->
+<?php
+include "../back-end/includes/navbar.php";
+?>
+ 
 
 <!-- start table-cell -->
 <?php
@@ -161,6 +88,60 @@ $conn->close();
 ?>
 
 
+
+<!-- start doctor-app-->
+<section class="doctor-app">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7">
+                <div class="doctor__apps d-flex justify-content-center ">
+                    <div class="doctor__app my-3">
+                        <h2> Book your appointment</h2>
+                        <p>We will confirm your appointment within 2 hours</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="meet__doctor__search">
+                                    <div class="meet__doctor__search__icon">
+                                      <i class="icofont icofont-clock-time"></i>
+                                    </div> <!-- meet__doctor__search__icon -->
+                                    <form action="../back-end/forms/book.php?doctor_id=<?php echo $id; ?>" method="POST" class="meet__doctor__search__meet">
+                                        <label for="control">Day</label>
+                                        <select class="form-control" id="control" name="time">
+                                            <option value="Tuesday">Tuesday</option>
+                                            <option value="Wednesday">Wednesday</option>
+                                            <option value="Thursday">Thursday</option>
+                                        </select>
+                                        <div class="doctor__app__btn">
+                                          <button class="btn__app" type="submit">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> <!-- col-md-6 -->
+                        </div> <!-- row -->
+                    </div> <!-- doctor__app -->
+                    <div class="doctor__app__img">
+                        <img src="images/3.png" alt="">
+                    </div> <!-- doctor__app__img -->
+                </div> <!-- doctor__apps -->
+            </div> <!-- col-lg-6 -->
+            <div class="col-xl-5 col-lg-5">
+                <div class="doctor__appimg">
+                  <div class="meet__doctor__search">
+                    <div class="meet__doctor__search__icon">
+                        <i class="icofont icofont-ui-call"></i>
+                    </div> <!-- meet__doctor__search__icon -->
+                    <div class="meet__doctor__search__meet">
+                       <h3>Emergency Call</h3>
+                       <p>+07 554 332 322</p>
+                    </div>
+                </div> <!-- meet__doctor__search -->
+                    <img src="images/4.jpg" alt="">
+                </div> <!-- doctor__appimg -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section> <!-- doctor-app -->
+<!-- end doctor-app-->
 
 
 

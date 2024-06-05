@@ -85,6 +85,9 @@
 <h2>Login Here</h2>
 <p>Didn't you account yet?<a href="sign-up.php">Register Here</a></p>
 <?php
+// بدء الجلسة
+session_start();
+
 // اتصال بقاعدة البيانات
 require_once "../back-end/config/conn.php";
 
@@ -100,6 +103,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($stmt->execute()){
             $result = $stmt->get_result();
             if($result->num_rows == 1){
+                $admin = $result->fetch_assoc();
+                $_SESSION['user'] = $admin;
+                $_SESSION['role'] = 'admin';
                 // توجيه المستخدم إلى صفحة الإدارة
                 header("Location: index-admin.php");
                 exit();
@@ -107,23 +113,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-// البحث في جدول الأطباء
-$doctor_sql = "SELECT id FROM doctor WHERE Email = ? AND password = ?";
-if($stmt = $conn->prepare($doctor_sql)){
-    $stmt->bind_param("ss", $email, $password);
-    if($stmt->execute()){
-        $result = $stmt->get_result();
-        if($result->num_rows == 1){
-            // استرجاع الـ ID
-            $row = $result->fetch_assoc();
-            $doctor_id = $row['id'];
-            // توجيه المستخدم إلى صفحة الطبيب مع إضافة الـ ID إلى الرابط
-            header("Location: index-doctor.php?id=" . urlencode($doctor_id));
-            exit();
+    // البحث في جدول الأطباء
+    $doctor_sql = "SELECT * FROM doctor WHERE Email = ? AND password = ?";
+    if($stmt = $conn->prepare($doctor_sql)){
+        $stmt->bind_param("ss", $email, $password);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            if($result->num_rows == 1){
+                $doctor = $result->fetch_assoc();
+                $_SESSION['user'] = $doctor;
+                $_SESSION['role'] = 'doctor';
+                // توجيه المستخدم إلى صفحة الطبيب مع إضافة الـ ID إلى الرابط
+                header("Location: index-doctor.php?id=" . urlencode($doctor['id']));
+                exit();
+            }
         }
     }
-}
-
 
     // البحث في جدول المرضى
     $patient_sql = "SELECT * FROM patient WHERE email = ? AND password = ?";
@@ -132,6 +137,9 @@ if($stmt = $conn->prepare($doctor_sql)){
         if($stmt->execute()){
             $result = $stmt->get_result();
             if($result->num_rows == 1){
+                $patient = $result->fetch_assoc();
+                $_SESSION['user'] = $patient;
+                $_SESSION['role'] = 'patient';
                 // توجيه المستخدم إلى صفحة المريض
                 header("Location: index.php");
                 exit();
@@ -147,26 +155,18 @@ if($stmt = $conn->prepare($doctor_sql)){
 
 <form action="" method="POST">
   <div class="row d-flex justify-content-center">
- 
-
     <div class="col-sm-9">
-      <input type="email" name="email" placeholder="Your Email" id="emailLogin" >
+      <input type="email" name="email" placeholder="Your Email" id="emailLogin">
     </div>
     <div class="col-sm-9">
-      <input type="password" name="password" placeholder="Password" id="passwordLogin" >
+      <input type="password" name="password" placeholder="Password" id="passwordLogin">
     </div>
-    
-
-   
     <div class="col-sm-9 text-center">
-<button class="btn1" id="btnLogin">Login</button>
+      <button class="btn1" id="btnLogin">Login</button>
     </div>
   </div> <!-- row -->
-
- 
-
-
 </form>
+
 </div> <!-- login__form -->
         </div>
 

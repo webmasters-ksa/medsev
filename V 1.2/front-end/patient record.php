@@ -1,77 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medsev - Healthcare Clinic </title>
-    
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-   
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<!-- start nav -->
-<nav class="header ">
-
-  <div id="navbar" >
-    <nav class="navbar navbar-expand-lg " >
-   
-      <div class="container" >
-        <a class="navbar-brand" href="index.php"><img src="images/logo.png"  alt=""></a>
-        
-  
-  
-        <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="icon">
-              <svg viewBox="0 0 175 80" width="45" height="35">
-                  <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                  <rect y="30" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                  <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-              </svg>
-          </span>
-        
-      </button>
-  
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about doctor.php">About</a>
-
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sick profile.php">Profile</a>
-
-            </li>
-    
-            <li class="nav-item">
-              <a class="nav-link" href="contact us.php">Contact Us</a>
-            </li>
-            <li class="dropdown">
-                <a class="dropdown__btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="icofont icofont-settings"></i> <span>Settings</span> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="update-patient.php">Update Information</a></li>
-                    <li><a class="dropdown-item" href="login.php">Logout</a></li>
-                </ul>
-            </li>
-          
-          </ul>
-          <div class="navbar__log">
-            <a href="login.php"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
-
-          </div> <!-- navbar__log -->
-        </div>
-      </div>
-    </nav>
-  <div>
-   
-  </nav>  
-    <!-- end nav -->
+<?php
+include "../back-end/includes/navbar.php";
+?>
+ 
  
           <!-- start table-cell -->
 <section class="table-cell patient-personal">
@@ -230,88 +160,52 @@
        
         <div class="col-12">
         <div class="appointment__teb">
-            <table class="table mt-5 text-center table-bordered table-striped">
-                <thead >
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    
-                    <th>Diagnosis</th>
-                    <th>prescription</th>
-                    <th>update</th>
+        <?php
+// الاتصال بقاعدة البيانات
+require_once "../back-end/config/conn.php";
 
-                </thead>
-                <tbody id="tBody">
-                    <tr>
-                        <td>1</td>
-                        <td>mohamed</td>
-                        <td>mohamed20213@gmil.com</td>
-                        <td>01002583085</td>
-                        <td> <button class="btn__app">view</button></td> 
-                        <td> <button class="btn__app">view  </button></td> 
-                        <td> <button class="btn__app">update  </button></td> 
-                  
-                     
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>mohamed</td>
-                        <td>mohamed20213@gmil.com</td>
-                        <td>01002583085</td>
-                        <td> <button class="btn__app">view</button></td> 
-                        <td> <button class="btn__app">view  </button></td> 
-                        <td> <button class="btn__app">update  </button></td> 
-                  
-                     
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>mohamed</td>
-                        <td>mohamed20213@gmil.com</td>
-                        <td>01002583085</td>
-                        <td> <button class="btn__app">view</button></td> 
-                        <td> <button class="btn__app">view  </button></td> 
-                        <td> <button class="btn__app">update  </button></td> 
-                  
-                     
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>mohamed</td>
-                        <td>mohamed20213@gmil.com</td>
-                        <td>01002583085</td>
-                        <td> <button class="btn__app">view</button></td> 
-                        <td> <button class="btn__app">view  </button></td> 
-                        <td> <button class="btn__app">update  </button></td> 
-                  
-                     
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>mohamed</td>
-                        <td>mohamed20213@gmil.com</td>
-                        <td>01002583085</td>
-                        <td> <button class="btn__app">view</button></td> 
-                        <td> <button class="btn__app">view  </button></td> 
-                        <td> <button class="btn__app">update  </button></td> 
-                  
-                     
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>mohamed</td>
-                        <td>mohamed20213@gmil.com</td>
-                        <td>01002583085</td>
-                        <td> <button class="btn__app">view</button></td> 
-                        <td> <button class="btn__app">view  </button></td> 
-                        <td> <button class="btn__app">update  </button></td> 
-                  
-                     
-                    </tr>
-  
-                </tbody>
-            </table>
+// استعلام لاستعراض بيانات المرضى
+$sql = "SELECT id, name, email, phone FROM patient";
+$result = mysqli_query($conn, $sql);
+
+?>
+
+<table class="table mt-5 text-center table-bordered table-striped">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Diagnosis</th>
+        <th>Prescription</th>
+    </thead>
+    <tbody id="tBody">
+        <?php
+        // التحقق مما إذا كان هناك صفوف متاحة في النتيجة
+        if (mysqli_num_rows($result) > 0) {
+            // تكرار الصفوف ووضع البيانات في الجدول
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['name'] . "</td>";
+                echo "<td>" . $row['email'] . "</td>";
+                echo "<td>" . $row['phone'] . "</td>";
+                echo "<td><button class='btn__app'>Add</button></td>";
+                echo "<td><button class='btn__app'>Add</button></td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='7'>لا يوجد بيانات متاحة</td></tr>";
+        }
+        ?>
+    </tbody>
+</table>
+
+<?php
+// إغلاق اتصال قاعدة البيانات
+mysqli_close($conn);
+?>
+
         </div> <!-- appointment__teb -->
         </div> <!-- col-12 -->
         </div> <!-- row -->
@@ -319,98 +213,7 @@
 
         <div class="container">
           <div class="row">
-              <div class="col-sm-6">
-                  <div class="appointment__screen">
-                      <table class="table mt-5 table-bordered table-striped">
-                          <thead>
-                              <tr>
-                                  <th scope="col"><span>ID:</span> <span>1</span></th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td><span>Name:</span> <span>Mohamed</span></td>
-                              </tr>
-                              <tr>
-                                  <td><span>Email:</span> <span>mohamed20213@gmail.com</span></td> <!-- Fixed typo in email -->
-                              </tr>
-                              <tr>
-                                  <td><span>Phone:</span> <span>01002583085</span></td>
-                              </tr>
-                            
-                              <tr>
-                                 
-                                  <td>
-                                      <span>Diagnosis:</span>
-                                      <button class="btn__app btn__app__one btn__app btn__app__table ">View</button>
-                                  </td>
-                              </tr>
-
-                              <tr>
-                                 
-                                <td>
-                                    <span>prescription:</span>
-                                    <button class="btn__app btn__app__one btn__app btn__app__table ">View</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                 
-                              <td>
-                                  <span>update:</span>
-                                  <button class="btn__app btn__app__one btn__app btn__app__table ">update</button>
-                              </td>
-                          </tr>
-                          </tbody>
-                      </table>
-                  </div> <!-- appointment__screen -->
-              </div> <!-- col-sm-6 -->
-              <div class="col-sm-6">
-                <div class="appointment__screen">
-                    <table class="table mt-5 table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col"><span>ID:</span> <span>1</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span>Name:</span> <span>Mohamed</span></td>
-                            </tr>
-                            <tr>
-                                <td><span>Email:</span> <span>mohamed20213@gmail.com</span></td> <!-- Fixed typo in email -->
-                            </tr>
-                            <tr>
-                                <td><span>Phone:</span> <span>01002583085</span></td>
-                            </tr>
-                          
-                            <tr>
-                               
-                                <td>
-                                    <span>Diagnosis:</span>
-                                    <button class="btn__app btn__app__one btn__app btn__app__table ">View</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                               
-                              <td>
-                                  <span>prescription:</span>
-                                  <button class="btn__app btn__app__one btn__app btn__app__table ">View</button>
-                              </td>
-                          </tr>
-
-                          <tr>
-                               
-                            <td>
-                                <span>update:</span>
-                                <button class="btn__app btn__app__one btn__app btn__app__table ">update</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div> <!-- appointment__screen -->
-            </div> <!-- col-sm-6 -->
+        
 
 
 
