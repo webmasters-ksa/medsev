@@ -10,3 +10,11 @@ window.onscroll = function(){
     }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const loginText = document.getElementById('login-text');
+    const userData = JSON.parse(localStorage.getItem('userData'));
+
+    if (userData) {
+        loginText.textContent = userData.name;
+    }
+});

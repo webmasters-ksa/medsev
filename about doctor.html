@@ -201,6 +201,37 @@
 <!-- ///////////////////  js /////////////////////// -->
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const navbarLog = document.querySelector('.navbar__log');
+      const userData = JSON.parse(localStorage.getItem('userData'));
+  
+      if (userData && userData.name) {
+        navbarLog.innerHTML = `
+            <div class="dropdown">
+                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-regular fa-user"></i> ${userData.name}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </div>
+        `;
+            } else {
+          navbarLog.innerHTML = '<a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>';
+      }
+      const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            localStorage.removeItem('userData');
+            // إعادة التوجيه إلى صفحة تسجيل الدخول بعد تسجيل الخروج
+            window.location.href = "login.html";
+        });
+    }
+});
+</script>
+  
 
 </body>
 </html>
