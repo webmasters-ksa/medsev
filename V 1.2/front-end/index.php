@@ -20,7 +20,7 @@
       <nav class="navbar navbar-expand-lg " >
      
         <div class="container" >
-          <a class="navbar-brand" href="index.html"><img src="images/logo.png"  alt=""></a>
+          <a class="navbar-brand" href="index.php"><img src="images/logo.png"  alt=""></a>
           
     
     
@@ -39,23 +39,23 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about patient.html">About</a>
+                <a class="nav-link" href="about patient.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="sick profile.html">Profile</a>
+                <a class="nav-link" href="sick profile.php">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index doctor.html">index doctor</a>
+                <a class="nav-link" href="index doctor.php">index doctor</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index admin.html">index admin.html</a>
+                <a class="nav-link" href="index-admin.php">index-admin.php</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="contact us.html">Contact Us</a>
+                <a class="nav-link" href="contact us.php">Contact Us</a>
               </li>
               
               <li class="dropdown">
@@ -63,8 +63,8 @@
                     <i class="icofont icofont-settings"></i> <span>Settings</span> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="update patient.html">Update Information</a></li>
-                    <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                    <li><a class="dropdown-item" href="update-patient.php">Update Information</a></li>
+                    <li><a class="dropdown-item" href="login.php">Logout</a></li>
                 </ul>
             </li>
             
@@ -158,7 +158,7 @@
                             <i class="icofont icofont-doctor"></i>
                             <h3>Find a Doctor</h3>
                             <p>Find a doctor and book an appointment</p>
-                            <a href="meet doctor.html"><button class="patient__option__choosee__hidden--btn">View</button></a>
+                            <a href="meet-doctor.php"><button class="patient__option__choosee__hidden--btn">View</button></a>
                         </div> <!-- patient__option__choosee__hidden -->
                         <div class="patient__option__choosee__show">
                             <i class="icofont icofont-doctor"></i>
@@ -172,52 +172,8 @@
                 </div> <!-- patient__option -->
             </div> <!-- col-xl-3 col-lg-4 -->
 
-            <div class="col-xl-3 col-lg-4 col-md-6">
 
-                <div class="patient__option">
-                    
-                    <div class="patient__option__choosee patient__option__choosee2">
-                        <div class="patient__option__choosee__hidden">
-                            <i class="icofont icofont-prescription"></i>
-                            <h3>Diagnosis</h3>
-                            <p>View Your Diagnosis</p>
-                            <a href="diagnosis.html"><button class="patient__option__choosee__hidden--btn">View</button></a>
-                        </div> <!-- patient__option__choosee__hidden -->
-                        <div class="patient__option__choosee__show">
-                            <i class="icofont icofont-prescription"></i>
-                            <h3>Diagnosis</h3>
-                            <p>View Your Diagnosis</p>
-                        </div> <!-- patient__option__choosee__show -->
-                       
-                    </div> <!-- patient__option__choosee -->
-
-
-                </div> <!-- patient__option -->
-            </div> <!-- col-xl-3 col-lg-4 -->
-
-
-            <div class="col-xl-3 col-lg-4 col-md-6">
-
-                <div class="patient__option">
-                    
-                    <div class="patient__option__choosee patient__option__choosee2">
-                        <div class="patient__option__choosee__hidden">
-                            <i class="icofont icofont-patient-file"></i>
-                            <h3>A Prescription</h3>
-                            <p>View Your Prescription and The Times to Take The Medication</p>
-                            <a href="patient'spersonal..html"><button class="patient__option__choosee__hidden--btn">View</button></a>
-                        </div> <!-- patient__option__choosee__hidden -->
-                        <div class="patient__option__choosee__show">
-                            <i class="icofont icofont-patient-file"></i>
-                            <h3>A Prescription</h3>
-                            <p>View Your Prescription and The Times to Take The Medication</p>
-                        </div> <!-- patient__option__choosee__show -->
-                       
-                    </div> <!-- patient__option__choosee -->
-
-
-                </div> <!-- patient__option -->
-            </div> <!-- col-xl-3 col-lg-4 -->
+              
         </div><!--row -->
     </div><!-- container -->
 </section><!-- patient -->

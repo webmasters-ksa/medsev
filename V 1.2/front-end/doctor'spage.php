@@ -20,7 +20,7 @@
       <nav class="navbar navbar-expand-lg " >
      
         <div class="container" >
-          <a class="navbar-brand" href="index.html"><img src="images/logo.png"  alt=""></a>
+          <a class="navbar-brand" href="index.php"><img src="images/logo.png"  alt=""></a>
           
     
     
@@ -39,18 +39,18 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about patient.html">About</a>
+                <a class="nav-link" href="about patient.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="sick profile.html">Profile</a>
+                <a class="nav-link" href="sick profile.php">Profile</a>
 
               </li>
          
               <li class="nav-item">
-                <a class="nav-link" href="contact us.html">Contact Us</a>
+                <a class="nav-link" href="contact us.php">Contact Us</a>
               </li>
        
               <li class="dropdown">
@@ -58,13 +58,13 @@
                     <i class="icofont icofont-settings"></i> <span>Settings</span> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="update patient.html">Update Information</a></li>
-                    <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                    <li><a class="dropdown-item" href="update-patient.php">Update Information</a></li>
+                    <li><a class="dropdown-item" href="login.php">Logout</a></li>
                 </ul>
             </li>
             </ul>
             <div class="navbar__log">
-              <a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
+              <a href="login.php"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
   
             </div> <!-- navbar__log -->
   

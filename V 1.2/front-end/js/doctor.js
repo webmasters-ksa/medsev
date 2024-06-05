@@ -22,11 +22,11 @@
 //             <!-- <div class=" choose__doctor__overlay">
 //             <a href="#"><button class="doctor__text__btn--btn">Get Appointment</button></a>  
 //             </div> -->
-//             <a href="doctor'spage.html"><img src="images/2.jpg" alt=""></a>
+//             <a href="doctor'spage.php"><img src="images/2.jpg" alt=""></a>
 
 //         </div> <!-- choose__doctor__img -->
 //         <div class="choose__doctor__text">
-//         <h2><a href="doctor'spage.html">Dr. ${chooseDoctor[i].FirstName } ${chooseDoctor[i].MiddleName }</a></h2>
+//         <h2><a href="doctor'spage.php">Dr. ${chooseDoctor[i].FirstName } ${chooseDoctor[i].MiddleName }</a></h2>
 
 //             <p> ${chooseDoctor[i].Speciality}</p>
 //         </div>
@@ -174,7 +174,7 @@
 //             console.log('Login successful');
 //             console.log(jsonData2);
 //             // Redirect to a specific page
-//             // window.location.href = 'http://127.0.0.1:5500/index.html'; // Replace 'specific_page_url' with the URL of the specific page
+//             // window.location.href = 'http://127.0.0.1:5500/index.php'; // Replace 'specific_page_url' with the URL of the specific page
 //         } else {
 //             // Handle failed login
 //             console.error('Login failed:', response.status);

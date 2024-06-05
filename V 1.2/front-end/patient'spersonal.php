@@ -20,7 +20,7 @@
       <nav class="navbar navbar-expand-lg " >
      
         <div class="container" >
-          <a class="navbar-brand" href="index.html"><img src="images/logo.png"  alt=""></a>
+          <a class="navbar-brand" href="index.php"><img src="images/logo.png"  alt=""></a>
           
     
     
@@ -39,39 +39,35 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="about patient.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="sick profile.html">Profile</a>
+                <a class="nav-link" href="sick profile.php">Profile</a>
 
               </li>
-        
+           
               <li class="nav-item">
-                <a class="nav-link" href="contact us.html">Contact Us</a>
+                <a class="nav-link" href="contact us.php">Contact Us</a>
               </li>
-       
               <li class="dropdown">
                 <a class="dropdown__btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="icofont icofont-settings"></i> <span>Settings</span> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="update patient.html">Update Information</a></li>
-                    <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                    <li><a class="dropdown-item" href="update-patient.php">Update Information</a></li>
+                    <li><a class="dropdown-item" href="login.php">Logout</a></li>
                 </ul>
             </li>
+            
             </ul>
             <div class="navbar__log">
-              <a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
+              <a href="login.php"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
   
             </div> <!-- navbar__log -->
-  
           </div>
-
-
-   
         </div>
       </nav>
     <div>
@@ -80,15 +76,21 @@
       <!-- end nav -->
 
 <!-- start table-cell -->
-<section class="table-cell doctor-padge">
+<section class="table-cell patient-personal">
 <div class="container">
     <div class="table__cell">
         <div class="table__cell__text">
 
-        <h2>Dr. Mohammad Abdullah</h2>
-        <span>Internal Medicine and Nephrology</span>
+        <h2>Your Prescription</h2>
 
-        </div> <!-- table__cell__text -->
+
+        <div class="table__cell__text__plan table__cell__text__plan2">
+             <a href="index.php"><span>Home</span></a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>A prescription</span>
+        </div> <!-- table__cell__text__plan -->
+
+        </div> <!-- table__cell__img -->
     </div> <!-- table__cell -->
 
     
@@ -99,70 +101,82 @@
 </section> <!-- table-cell -->
 <!-- end table-cell -->
 
+<!-- start prescription -->
+<section class="prescription">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
 
-<!-- start doctor-profile -->
-<section class="doctor-profile patient-profile doctor-profile">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 ">
-                <div class="doctorprofile">
-            <div class="doctorprofile__img">
-                     <img src="images/WhatsApp Image 2024-05-06 at 20.12.17_2f5e399f.jpg" alt="">
-            </div>  <!-- doctorprofile__img -->
+              <div class="doctor__apps d-flex justify-content-center ">
+                  <div class="doctor__app my-3">
+                      <h2> Your Prescription</h2>
+                     
+               
+
+          <div class="meet__doctor__dec">
+            <ul>
+              <li>Name:<span> [Patient Name]</span></li>
+              <li>Age:<span> [Age]</span></li>
+              <li>Doctor's Name:<span> [Doctor's Name]</span></li>
+              <li>Date:<span> [Date]</span></li>
+            
+            </ul>
+          </div>
+                     
+                          <div class="meet__doctor__search">
+                              <div class="meet__doctor__search__icon">
+                                <i class="icofont icofont-prescription"></i>
+                              </div> <!-- meet__doctor__search__icon -->
+                              <div class="meet__doctor__search__meet">
+                                <p>Paracetamol</p>
+                                
+                            </div>
+          
+          
+                          </div> <!-- meet__doctor__search -->
+              
+          
+
+                          <div class="meet__doctor__search">
+                            <div class="meet__doctor__search__icon">
+                              <i class="icofont icofont-prescription"></i>
+                            </div> <!-- meet__doctor__search__icon -->
+                            <div class="meet__doctor__search__meet">
+                              <p>Ibuprofen</p>
+                              
+                          </div>
+        
+        
+                        </div> <!-- meet__doctor__search -->
+            
+        
+               
+
+
+
                     
-
-                    <div class="doctorprofile__text">
-<div class="doctorprofile__text__contact">
-<h2>Contact info</h2>
-
-    <ul class="d-flex flex-column" >
-      <li> <i class="fa-solid fa-phone"></i> <span>Call : +20 101 080 9962    </span> </li>
-   
-      <li>  <i class="fa-solid fa-location-dot"></i> <span> Fayoum General Hospital</span></li>
-    </ul>
-
-    
-<div class="patient__profile">
-    <a href="update patient.html">
-        <button class="btn__app">
-            update info
-        </button>
-    </a>
-    
-
-</div> <!-- patient__profile -->
-</div> <!-- doctorprofile__text__contact -->
-
-                    </div> <!-- doctorprofile__text -->
+                   
+                      
+     
+                  </div> <!-- doctor__app -->
+ 
+                  <!-- <div class="doctor__app__img">
                     
-                </div> <!-- doctorprofile -->
-            </div> <!-- col-lg-5 -->
-
-
-            <div class="col-lg-7">
-                <div class="doctorinfo">
-
-                    <div class="doctorinfo__phy doctorinfo__ed">
-                    <h4>Education</h4>
-
-        <ul>
-      <li>Head of the kidney department at Fayoum General Hospital</li>
-      <li>Master's degree in Nephrology</li>
-
-
-        </ul>
-                        </div> <!-- doctorinfo__phy -->
+                      <img src="images/3.png" alt="">
+                  </div>  -->
+                  
+              </div> <!-- doctor__apps -->
     
-                </div> <!-- doctorinfo -->
-
-            </div> <!-- col-lg-7 -->
-        </div> <!-- row --> 
-    </div> <!-- container -->
-</section> <!-- doctor-profile -->
-<!-- end doctor-profile -->
 
 
 
+
+
+      </div>
+    </div><!-- row -->
+  </div> <!-- container -->
+</section> <!-- prescription -->
+<!-- end prescription -->
 
 
 

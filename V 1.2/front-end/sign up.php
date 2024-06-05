@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg " >
    
       <div class="container" >
-        <a class="navbar-brand" href="index.html"><img src="images/logo.png"  alt=""></a>
+        <a class="navbar-brand" href="index.php"><img src="images/logo.png"  alt=""></a>
         
   
   
@@ -39,24 +39,24 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="sick profile.html">Profile</a>
+              <a class="nav-link" href="sick profile.php">Profile</a>
 
             </li>
-  
+     
             <li class="nav-item">
-              <a class="nav-link" href="contactus.html">Contact Us</a>
+              <a class="nav-link" href="contact us.php">Contact Us</a>
             </li>
      
           
           </ul>
           <div class="navbar__log">
-            <a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
+            <a href="login.php"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
 
           </div> <!-- navbar__log -->
         </div>
@@ -69,57 +69,72 @@
 
 
 
-  <!-- start login -->
-  <section class="login">
-    <div class="container-fluid">
-      <div class="row ">
-
-        <div class="col-lg-6">
-<div class="login__img">
-  <img src="images/login-bg.jpg" alt="">
-</div> <!-- login__img -->
-        </div>
-
-        <div class="col-lg-6 ">
-<div class="login__form ">
-<h2>Login Here</h2>
-<p>Didn't you account yet?<a href="sign up.html">Register Here</a></p>
-<form action="">
-  <div class="row d-flex justify-content-center">
- 
-
-    <div class="col-sm-9">
-      <input type="email" name="email" placeholder="Your Email" id="emailLogin" >
-    </div>
-    <div class="col-sm-9">
-      <input type="password" name="password" placeholder="Password" id="passwordLogin" >
-    </div>
+    <!-- start login -->
+    <section class="login signup">
+        <div class="container-fluid">
+          <div class="row ">
     
-
-    <div class="col-sm-9">
-      <p><a href="forget password.html">Forgot Password?</a></p>
-    </div>
-
-    <div class="col-sm-9 text-center">
-<button class="btn1" id="btnLogin">Login</button>
-    </div>
-  </div> <!-- row -->
-
- 
-
-
-</form>
-</div> <!-- login__form -->
+            <div class="col-lg-6">
+    <div class="login__img">
+      <img src="images/signup-bg.jpg" alt="">
+    </div> <!-- login__img -->
+            </div>
+    
+            <div class="col-lg-6 " >
+    <div class="login__form signup__form ">
+    <h2>Register Here</h2>
+    <p>Already have an account?<a href="login.php">Log In</a></p>
+    <form action="">
+      <div class="row">
+        <div class="col-lg-6">
+          <input type="text" name="text" placeholder="First Name" id="firstNameUp" >
         </div>
+        <div class="col-lg-6">
+            <input type="text" name="lastName" placeholder="Last Name" id="lastNameUp" >
+          </div>
 
-
+          <div class="col-lg-6">
+            <input type="text" name="phoneNumber" placeholder="Phone Number" id="phoneNumberUP" >
+          </div>
+    
+        <div class="col-lg-6">
+          <input type="email" name="email" placeholder="Your Email" id="emailUP" >
+        </div>
+        <div class="col-lg-6">
+          <input type="password" name="password--singup" placeholder="Password" id="passwordSingup" >
+        </div>
+        <!-- <div class="col-lg-6">
+          <input type="password" name="password--singup" placeholder="Confirm Password" id="passwordUpConform" >
+        </div> -->
+    
+        <div class="col-sm-12 ">
+            <input type="checkbox" name="checkbox" id="checkbox" >
+          <p>
+   
+            Yes, I agree with all <a href="#">Terms & Conditions</a>
+          </p>
+        </div>
+    
+        <div class="col-sm-12 text-center">
+        <button class="btn1" id="signUP" >Sign Up</button>
+        </div>
       </div> <!-- row -->
-    </div> <!-- container   -->
-  </section>
-    <!-- end login -->
-
-       <!-- start footer -->
-       <footer class="footerbig">
+    
+     
+    
+    
+    </form>
+    </div> <!-- login__form -->
+            </div>
+    
+    
+          </div> <!-- row -->
+        </div> <!-- container   -->
+      </section>
+        <!-- end login -->
+    
+      <!-- start footer -->
+      <footer class="footerbig">
         <div class="footer">
           <div class="container">
             <div class="row">
@@ -214,8 +229,8 @@
         
       </footer> <!-- footer -->
       <!-- end footer -->
-
-  
+    
+      
 <!-- ///////////////////  js /////////////////////// -->
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/doctor.js"></script>

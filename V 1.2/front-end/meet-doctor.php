@@ -1,3 +1,9 @@
+<?php
+require_once "../back-end/config/conn.php";
+
+$sql = "SELECT `id`, `Name`, `Email`, `Phone`, `Specialty`, `Qualifications`, `Age`, `password`, `image_path` FROM `doctor`";
+$result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +26,7 @@
       <nav class="navbar navbar-expand-lg " >
      
         <div class="container" >
-          <a class="navbar-brand" href="index.html"><img src="images/logo.png"  alt=""></a>
+          <a class="navbar-brand" href="index.php"><img src="images/logo.png"  alt=""></a>
           
     
     
@@ -39,32 +45,32 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about patient.html">About</a>
+                <a class="nav-link" href="about patient.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="sick profile.html">Profile</a>
+                <a class="nav-link" href="sick profile.php">Profile</a>
 
               </li>
     
               <li class="nav-item">
-                <a class="nav-link" href="contact us.html">Contact Us</a>
+                <a class="nav-link" href="contact us.php">Contact Us</a>
               </li>
               <li class="dropdown">
                 <a class="dropdown__btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="icofont icofont-settings"></i> <span>Settings</span> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="update patient.html">Update Information</a></li>
-                    <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                    <li><a class="dropdown-item" href="update-patient.php">Update Information</a></li>
+                    <li><a class="dropdown-item" href="login.php">Logout</a></li>
                 </ul>
             </li>
             
             </ul>
             <div class="navbar__log">
-              <a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
+              <a href="login.php"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
   
             </div> <!-- navbar__log -->
           </div>
@@ -85,7 +91,7 @@
 
 
         <div class="table__cell__text__plan">
-             <a href="index.html"><span>Home</span></a>
+             <a href="index.php"><span>Home</span></a>
             <i class="fa-solid fa-chevron-right"></i>
             <span>Doctors</span>
         </div> <!-- table__cell__text__plan -->
@@ -97,75 +103,34 @@
 </div> <!-- container -->
 
 
-<div class="meet-doctor">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="meet__doctor__search">
-                    <div class="meet__doctor__search__icon">
-                        <i class="icofont icofont-doctor-alt"></i>
-                    </div> <!-- meet__doctor__search__icon -->
 
-                    <form action="#" class="meet__doctor__search__meet">
-                        <label for="search">search</label>
-                        <input type="search" id="search" placeholder="Doctor Name" name="search">
-                    </form>
-
-
-                </div> <!-- meet__doctor__search -->
-            </div> <!-- col-sm-6 -->
-            
-
-
-            
-        </div> <!-- row -->
-    </div> <!-- container -->
-</div> <!-- meet-doctor -->
 
 </section> <!-- table-cell -->
 <!-- end table-cell -->
 
-<!--start choose-doctor -->
+<!-- start choose-doctor -->
 <section class="choose-doctor">
     <div class="container">
         <div class="row" id="meetDoctor">
-       
-          <div class="col-lg-4 col-sm-6 ">
-               <div class="choose__doctor">
-                   <div class="choose__doctor__img">
-                       <!-- <div class=" choose__doctor__overlay">
-                       <a href="#"><button class="doctor__text__btn--btn">Get Appointment</button></a>  
-                       </div> -->
-                       <a href="doctor'spage.html"><img src="images/2.jpg" alt=""></a>
-            
-                   </div> <!-- choose__doctor__img -->
-                   <div class="choose__doctor__text">
-                   <h2><a href="doctor'spage.html">Dr.Ahemd</a></h2>
-            
-                       <p> chooseDoctor</p>
-                   </div>
-                
-               </div> <!-- choose__doctor -->
-          </div> <!-- col-lg-4 col-sm-6  -->
-
-          <div class="col-lg-4 col-sm-6 ">
-            <div class="choose__doctor">
-                <div class="choose__doctor__img">
-                    <!-- <div class=" choose__doctor__overlay">
-                    <a href="#"><button class="doctor__text__btn--btn">Get Appointment</button></a>  
-                    </div> -->
-                    <a href="doctor'spage.html"><img src="images/2.jpg" alt=""></a>
-         
-                </div> <!-- choose__doctor__img -->
-                <div class="choose__doctor__text">
-                <h2><a href="doctor'spage.html">Dr.Ahemd</a></h2>
-         
-                    <p> chooseDoctor</p>
-                </div>
-             
-            </div> <!-- choose__doctor -->
-       </div> <!-- col-lg-4 col-sm-6  -->
-
+            <?php
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo '<div class="col-lg-4 col-sm-6">';
+                    echo '<div class="choose__doctor">';
+                    echo '<div class="choose__doctor__img">';
+                    echo '<a href="doctor-details.php?id=' . $row["id"] . '"><img src="../back-end/upload/' . $row["image_path"] . '" alt="Doctor Image"></a>';
+                    echo '</div>'; // choose__doctor__img
+                    echo '<div class="choose__doctor__text">';
+                    echo '<h2><a href="doctor-details.php?id=' . $row["id"] . '">' . $row["Name"] . '</a></h2>';
+                    echo '<p>' . $row["Specialty"] . '</p>';
+                    echo '</div>';
+                    echo '</div>'; // choose__doctor
+                    echo '</div>'; // col-lg-4 col-sm-6
+                }
+            } else {
+                echo "No doctors found.";
+            }
+            ?>
         </div> <!-- row -->
     </div><!-- container -->
 </section> <!-- choose-doctor -->

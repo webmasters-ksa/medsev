@@ -11,8 +11,6 @@
 </head>
 <body>
 
-
-
 <!-- start nav -->
 <nav class="header ">
 
@@ -20,7 +18,7 @@
       <nav class="navbar navbar-expand-lg " >
      
         <div class="container" >
-          <a class="navbar-brand" href="index.html"><img src="images/logo.png"  alt=""></a>
+          <a class="navbar-brand" href="index.php"><img src="images/logo.png"  alt=""></a>
           
     
     
@@ -39,32 +37,24 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about patient.html">About</a>
+                <a class="nav-link" href="#">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="sick profile.html">Profile</a>
+                <a class="nav-link" href="sick profile.php">Profile</a>
 
               </li>
-           
+ 
               <li class="nav-item">
-                <a class="nav-link" href="contact us.html">Contact Us</a>
+                <a class="nav-link" href="contact us.php">Contact Us</a>
               </li>
-              <li class="dropdown">
-                <a class="dropdown__btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="icofont icofont-settings"></i> <span>Settings</span> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="update patient.html">Update Information</a></li>
-                    <li><a class="dropdown-item" href="login.html">Logout</a></li>
-                </ul>
-            </li>
+       
             
             </ul>
             <div class="navbar__log">
-              <a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
+              <a href="login.php"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
   
             </div> <!-- navbar__log -->
           </div>
@@ -74,102 +64,84 @@
      
     </nav>  
       <!-- end nav -->
+ 
 
-<!-- start table-cell -->
+      <!-- start table-cell -->
 <section class="table-cell patient-personal">
-<div class="container">
-    <div class="table__cell">
-        <div class="table__cell__text">
-
-        <h2>Your Prescription</h2>
-
-
-        <div class="table__cell__text__plan table__cell__text__plan2">
-             <a href="index.html"><span>Home</span></a>
-            <i class="fa-solid fa-chevron-right"></i>
-            <span>A prescription</span>
-        </div> <!-- table__cell__text__plan -->
-
-        </div> <!-- table__cell__img -->
-    </div> <!-- table__cell -->
-
+    <div class="container">
+        <div class="table__cell">
+            <div class="table__cell__text">
     
-</div> <!-- container -->
+            <h2>Forget Password</h2>
+    
+    
+            <div class="table__cell__text__plan table__cell__text__plan2">
+                 <a href="login.php"><span>LOGIN</span></a>
+                <i class="fa-solid fa-chevron-right "></i>
+                <span>Forget password</span>
+            </div> <!-- table__cell__text__plan -->
+    
+            </div> <!-- table__cell__img -->
+        </div> <!-- table__cell -->
+    
+        
+    </div> <!-- container -->
+    
+    
+    
+    </section> <!-- table-cell -->
+    <!-- end table-cell -->
 
 
-
-</section> <!-- table-cell -->
-<!-- end table-cell -->
-
-<!-- start prescription -->
-<section class="prescription">
+    <!-- start prescription -->
+<section class="prescription update-patient">
   <div class="container">
     <div class="row">
       <div class="col-12">
 
               <div class="doctor__apps d-flex justify-content-center ">
                   <div class="doctor__app my-3">
-                      <h2> Your Prescription</h2>
-                     
+                      <h2> Reset your password</h2>
+                      <p>We will send you an email to reset your password.</p>
                
 
-          <div class="meet__doctor__dec">
-            <ul>
-              <li>Name:<span> [Patient Name]</span></li>
-              <li>Age:<span> [Age]</span></li>
-              <li>Doctor's Name:<span> [Doctor's Name]</span></li>
-              <li>Date:<span> [Date]</span></li>
-            
-            </ul>
-          </div>
-                     
-                          <div class="meet__doctor__search">
-                              <div class="meet__doctor__search__icon">
-                                <i class="icofont icofont-prescription"></i>
-                              </div> <!-- meet__doctor__search__icon -->
-                              <div class="meet__doctor__search__meet">
-                                <p>Paracetamol</p>
-                                
-                            </div>
-          
-          
-                          </div> <!-- meet__doctor__search -->
-              
-          
+                      <div class="update-patient__upda">
 
-                          <div class="meet__doctor__search">
-                            <div class="meet__doctor__search__icon">
-                              <i class="icofont icofont-prescription"></i>
-                            </div> <!-- meet__doctor__search__icon -->
-                            <div class="meet__doctor__search__meet">
-                              <p>Ibuprofen</p>
-                              
-                          </div>
-        
-        
-                        </div> <!-- meet__doctor__search -->
-            
-        
-               
-
-
-
+                                  <div class="change__info__text">
+                                    <h3>forget password</h3>
+                                </div> <!-- change__info__text -->
+                         
+                           
+                <div class="collapse show" id="collapseExample0">
+                    <div class="change__info">
+                            
                     
-                   
+                    <div class="meet__doctor__search">
+                         
+                <form action="#" class="meet__doctor__search__meet">
+                <label for="Phone">Email</label>
+                <input type="email" id="emailForget" placeholder="Enter Your Email" name="search">
+                </form>
+                    
+                    
+                                </div> <!-- meet__doctor__search -->
+                    
+                                <div class="patient__profile__btn">
+                                    <button class="btn__app">confirm</button>
                       
-     
+                                    <a href="login.php">
+                                        <button class="btn__app">cancel</button>
+                                    </a>
+                            </div> <!-- patient__profile__btn -->
+                               </div><!-- change__info -->
+                            </div>
+               
+    
                   </div> <!-- doctor__app -->
  
-                  <!-- <div class="doctor__app__img">
-                    
-                      <img src="images/3.png" alt="">
-                  </div>  -->
-                  
+  
               </div> <!-- doctor__apps -->
     
-
-
-
 
 
       </div>
@@ -179,9 +151,8 @@
 <!-- end prescription -->
 
 
-
-        <!-- start footer -->
-        <footer class="footerbig">
+         <!-- start footer -->
+         <footer class="footerbig">
           <div class="footer">
             <div class="container">
               <div class="row">
@@ -206,8 +177,8 @@
                       <li>
                         <i class="fa-solid fa-location-dot"></i>
                    <p >
-                    15 6'october, Hosary Street,
-                    <br> cairo egypt
+                    210-27 Quadra, Market Street,
+                    <br> Victoria Canada
                    </p>
                   </li>
                     </ul>
@@ -242,7 +213,8 @@
                     </ul>
                   </div> <!-- footer__list -->
                 </div>
-<div class="col-lg-3 col-sm-6">
+      
+                <div class="col-lg-3 col-sm-6">
                   <div class="footer__list">
                     <h2>Feedback</h2>
                     <form action="" class="footer__form">
@@ -267,20 +239,19 @@
                   </div> <!-- footer__list -->
                 </div>
       
-              
-      
               </div> <!-- row -->
             </div> <!-- container -->
           </div> <!-- footer -->
           
-          
+   
         </footer> <!-- footer -->
         <!-- end footer -->
 
-  <!-- ///////////////////  js /////////////////////// -->
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
-  
-  </body>
-  </html>
-  
+        <!-- ///////////////////  js /////////////////////// -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
+
