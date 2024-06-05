@@ -4,8 +4,8 @@
 @import url("../layout/navbar.css");
 @import url("../vendore/animate.css");
 @import url("../vendore/bootstrap.min.css");
-/* @import url("@icon/icofont/icofont.css");
-@import url("https://unpkg.com/@icon/icofont/icofont.css"); */
+@import url("@icon/icofont/icofont.css");
+@import url("https://unpkg.com/@icon/icofont/icofont.css");
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 @import url("../component/table cell.css");

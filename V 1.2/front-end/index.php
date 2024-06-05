@@ -90,6 +90,53 @@ include "../back-end/includes/navbar.php";
                 </div> <!-- patient__option -->
             </div> <!-- col-xl-3 col-lg-4 -->
 
+            <div class="col-xl-3 col-lg-4 col-md-6">
+
+<div class="patient__option">
+    
+    <div class="patient__option__choosee patient__option__choosee2">
+        <div class="patient__option__choosee__hidden">
+            <i class="icofont icofont-prescription"></i>
+            <h3>Diagnosis</h3>
+            <p>View Your Diagnosis</p>
+            <a href="diagnosis.php?id=<?php echo $_SESSION['user']['id'];; ?>"><button class="patient__option__choosee__hidden--btn">View</button></a>
+        </div> <!-- patient__option__choosee__hidden -->
+        <div class="patient__option__choosee__show">
+            <i class="icofont icofont-prescription"></i>
+            <h3>Diagnosis</h3>
+            <p>View Your Diagnosis</p>
+        </div> <!-- patient__option__choosee__show -->
+       
+    </div> <!-- patient__option__choosee -->
+
+
+</div> <!-- patient__option -->
+</div> <!-- col-xl-3 col-lg-4 -->
+
+
+<div class="col-xl-3 col-lg-4 col-md-6">
+
+<div class="patient__option">
+    
+    <div class="patient__option__choosee patient__option__choosee2">
+        <div class="patient__option__choosee__hidden">
+            <i class="icofont icofont-patient-file"></i>
+            <h3>A Prescription</h3>
+            <p>View Your Prescription and The Times to Take The Medication</p>
+            <a href="patient'spersonal.php?id=<?php echo $_SESSION['user']['id'];; ?>"><button class="patient__option__choosee__hidden--btn">View</button></a>
+        </div> <!-- patient__option__choosee__hidden -->
+        <div class="patient__option__choosee__show">
+            <i class="icofont icofont-patient-file"></i>
+            <h3>A Prescription</h3>
+            <p>View Your Prescription and The Times to Take The Medication</p>
+        </div> <!-- patient__option__choosee__show -->
+       
+    </div> <!-- patient__option__choosee -->
+
+
+</div> <!-- patient__option -->
+</div> <!-- col-xl-3 col-lg-4 -->
+
 
               
         </div><!--row -->

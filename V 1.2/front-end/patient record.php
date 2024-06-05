@@ -33,130 +33,7 @@ include "../back-end/includes/navbar.php";
     <section class="appointment patient-record">
         <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6">
-                <div class="doctor__apps d-flex justify-content-center ">
-                    <div class="doctor__app doctor__app__pe my-3">
-                        <h2> Make a Diagnosis</h2>
-                 
-
-                       <div class="row">
-                        <div class="meet__doctor__search">
-                          <div class="meet__doctor__search__icon">
-                              <i class="icofont  icofont-prescription"></i>
-                          </div> <!-- meet__doctor__search__icon -->
-      
-                          <form action="#" class="meet__doctor__search__meet patient-record__inp">
-                              <label for="nameTreatment2">Date Of Examination</label>
-                              <input type="text" id="nameTreatment2" placeholder="Enter the date" name="search">
-                          </form>
-      
-      
-                      </div> <!-- meet__doctor__search -->
-                  
-                            <div class="meet__doctor__search">
-                                <div class="meet__doctor__search__icon">
-                                    <i class="icofont  icofont-prescription"></i>
-                                </div> <!-- meet__doctor__search__icon -->
-            
-                                <form action="#" class="meet__doctor__search__meet">
-                                    <label for="nameapp">Diagnosis</label>
-                                    <textarea name="textarea" id="textarea" cols="20" rows="10" placeholder="Write a Diagnosis here"></textarea>
-                                </form>
-            
-            
-                            </div> <!-- meet__doctor__search -->
-                       
-
-                 
-
-                  
-
-        
-    
-                       </div> <!-- row -->
-                     
-                        
-                    <div class="doctor__app__btn">
-                      <button class="btn__app" type="submit">submit</button>
-                    </div>
-                    </div> <!-- doctor__app -->
-
-                    <div class="doctor__app__img">
-                      
-                        <img src="images/3.png" alt="">
-                    </div> <!-- doctor__app__img -->
-                    
-                </div> <!-- doctor__apps -->
-      
-
-            </div> <!-- col-lg-6 -->
-
-            <div class="col-lg-6">
-                <div class="doctor__apps d-flex justify-content-center ">
-                    <div class="doctor__app doctor__app__pe my-3">
-                        <h2> Make a Prescription</h2>
-                        
-                 
-
-                       <div class="row">
-                        
-                            <div class="meet__doctor__search">
-                                <div class="meet__doctor__search__icon">
-                                    <i class="icofont  icofont-prescription"></i>
-                                </div> <!-- meet__doctor__search__icon -->
-            
-                                <form action="#" class="meet__doctor__search__meet patient-record__inp">
-                                    <label for="nameTreatment">Name of medicine</label>
-                                    <input type="text" id="nameTreatment" placeholder="Enter Medicine name" name="search">
-                                </form>
-            
-            
-                            </div> <!-- meet__doctor__search -->
-
-                            <div class="meet__doctor__search">
-                                <div class="meet__doctor__search__icon">
-                                    <i class="icofont  icofont-prescription"></i>
-                                </div> <!-- meet__doctor__search__icon -->
-            
-                                <form action="#" class="meet__doctor__search__meet patient-record__inp">
-                                    <label for="nameTreatment2">Name of medicine</label>
-                                    <input type="text" id="nameTreatment2" placeholder="Enter Medicine name" name="search">
-                                </form>
-            
-            
-                            </div> <!-- meet__doctor__search -->
-                       
-                            <div class="meet__doctor__search">
-                                <div class="meet__doctor__search__icon">
-                                    <i class="icofont  icofont-prescription"></i>
-                                </div> <!-- meet__doctor__search__icon -->
-            
-                                <form action="#" class="meet__doctor__search__meet patient-record__inp">
-                                    <label for="nameTreatment3">Name of medicine</label>
-                                    <input type="text" id="nameTreatment3" placeholder="Enter Medicine name" name="search">
-                                </form>
-            
-            
-                            </div> <!-- meet__doctor__search -->
-                       
-     
-                       </div> <!-- row -->
-                     
-                        
-                    <div class="doctor__app__btn">
-                      <button class="btn__app" type="submit">submit</button>
-                    </div>
-                    </div> <!-- doctor__app -->
-
-                    <div class="doctor__app__img">
-                      
-                        <img src="images/3.png" alt="">
-                    </div> <!-- doctor__app__img -->
-                    
-                </div> <!-- doctor__apps -->
-      
-
-            </div> <!-- col-lg-6 -->
+          
        
         <div class="col-12">
         <div class="appointment__teb">
@@ -190,8 +67,8 @@ $result = mysqli_query($conn, $sql);
                 echo "<td>" . $row['name'] . "</td>";
                 echo "<td>" . $row['email'] . "</td>";
                 echo "<td>" . $row['phone'] . "</td>";
-                echo "<td><button class='btn__app'>Add</button></td>";
-                echo "<td><button class='btn__app'>Add</button></td>";
+                echo "<td><a href='didagnosis.php?id={$row['id']}' class='btn__app'>Add</a></td>";
+                echo "<td><a href='Prescription.php?id={$row['id']}' class='btn__app'>Add</a></td>";
                 echo "</tr>";
             }
         } else {

@@ -1,70 +1,69 @@
-<?php
-include "../back-end/includes/navbar.php";
-?>
- 
 
 <!-- start table-cell -->
-<section class="table-cell table-cell2 doctor-padge">
-<div class="container">
-    <div class="table__cell">
-        <div class="table__cell__text">
+<?php
+include "../back-end/includes/navbar.php";
 
-        <h2>hassan hamade</h2>
+// التحقق مما إذا كان هناك قيمة مخزنة في $_SESSION
+if(isset($_SESSION['user'])) {
+    $patient_id = $_SESSION['user']['id'];
 
+    // الاتصال بقاعدة البيانات
+    require_once "../back-end/config/conn.php";
 
-        </div> <!-- table__cell__text -->
-    </div> <!-- table__cell -->
+    // إعداد الاستعلام لاسترجاع البيانات
+    $sql = "SELECT `name`, `email`, `phone`, `age` FROM `patient` WHERE `id` = '$patient_id'";
+    $result = mysqli_query($conn, $sql);
 
-    
-</div> <!-- container -->
+    // التحقق مما إذا كان هناك نتائج للاستعلام
+    if (mysqli_num_rows($result) > 0) {
+        // استخراج البيانات
+        $row = mysqli_fetch_array($result);
 
+        // تخزين البيانات في متغيرات محلية
+        $name = $row['name'];
+        $email = $row['email'];
+        $phone = $row['phone'];
+        $age = $row['age'];
 
+        // عرض البيانات
+        echo "<section class='table-cell table-cell2 doctor-padge'>";
+        echo "<div class='container'>";
+        echo "<div class='table__cell'>";
+        echo "<div class='table__cell__text'>";
+        echo "<h2>$name</h2>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        echo "</section>";
 
-</section> <!-- table-cell -->
-<!-- end table-cell -->
-
-
-
-<!-- start doctor-profile -->
-<section class="doctor-profile patient-profile sick-prof">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="doctorprofile">
-                    <div class="doctorprofile__img">
-                     <img src="images/Parsons students partner with Care + Wear to produce a dignified patient gown.jpg" alt="">
-                    </div>  <!-- doctorprofile__img -->
-                    
-
-                    <div class="doctorprofile__text">
-<div class="doctorprofile__text__contact">
-<h2>Contact info</h2>
-
-    <ul class="d-flex flex-column" >
-      <li> <i class="fa-solid fa-phone"></i> <span>Call : +07 554 332 322</span> </li>
-      <li> <i class="fa-solid fa-envelope"></i> <span>hello@medsev.com</span></li>
-      <li>  <i class="fa-solid fa-location-dot"></i> <span> 210-27 Quadra, Canada</span></li>
-    </ul>
-
-    
-<div class="patient__profile">
-    <a href="update-patient.php">
-        <button class="btn__app">
-            update info
-        </button>
-    </a>
-    
-
-</div> <!-- patient__profile -->
-</div> <!-- doctorprofile__text__contact -->
-
-
-
-                    </div> <!-- doctorprofile__text -->
-                    
-                </div> <!-- doctorprofile -->
-            </div> <!-- col-lg-5 -->
-
+        echo "<section class='doctor-profile patient-profile sick-prof'>";
+        echo "<div class='container'>";
+        echo "<div class='row'>";
+        echo "<div class='col-lg-5'>";
+        echo "<div class='doctorprofile'>";
+        echo "<div class='doctorprofile__img'>";
+        echo "<img src='images/Parsons students partner with Care + Wear to produce a dignified patient gown.jpg' alt=''>";
+        echo "</div>";
+        echo "<div class='doctorprofile__text'>";
+        echo "<div class='doctorprofile__text__contact'>";
+        echo "<h2>Contact info</h2>";
+        echo "<ul class='d-flex flex-column'>";
+        echo "<li> <i class='fa-solid fa-phone'></i> <span>Call : $phone</span> </li>";
+        echo "<li> <i class='fa-solid fa-envelope'></i> <span>$email</span></li>";
+        echo "<li>  <i class='fa-solid fa-location-dot'></i> <span>$age</span></li>";
+        echo "</ul>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        echo "</section>";
+    } else {
+        echo "لا توجد بيانات متاحة";
+    }
+}
+?>
 
             <div class="col-12">
                 <div class="doctorinfo doctorinfo2">
