@@ -1,17 +1,25 @@
 <?php
-// اتصال بقاعدة البيانات
-require_once "../config/conn2.php";
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, PUT, DELETE");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+header('Content-Type: application/json; charset=utf-8');
+// استيراد الملف conn2.php
+require_once "../config/conn.php";
 
-// التحقق من وصول البيانات بصيغة JSON
-$data = json_decode(file_get_contents("php://input"));
+// فحص وجود البيانات في الرابط
+if (!empty($_GET['patient_id']) && !empty($_GET['Ecg']) && !empty($_GET['SpO2']) && !empty($_GET['Temperature']) && !empty($_GET['Bpm'])) {
+    // القراءة وتخزين البيانات من الرابط
+    $patient_id = $_GET['patient_id'];
+    $Ecg = $_GET['Ecg'];
+    $SpO2 = $_GET['SpO2'];
+    $Temperature = $_GET['Temperature'];
+    $Bpm = $_GET['Bpm'];
 
-// فحص وجود البيانات
-if (!empty($data->patient_id) && !empty($data->Ecg) && !empty($data->SpO2) && !empty($data->Temperature) && !empty($data->Bpm)) {
     // استعداد الاستعلام
     $sql = "INSERT INTO analysis (patient_id, Ecg, SpO2, Temperature, Bpm) VALUES (?, ?, ?, ?, ?)";
-    if ($stmt = $pdo->prepare($sql)) {
+    if ($stmt = $conn->prepare($sql)) {
         // ربط البارامترات
-        $stmt->bind_param("iiiii", $data->patient_id, $data->Ecg, $data->SpO2, $data->Temperature, $data->Bpm);
+        $stmt->bind_param("iiiii", $patient_id, $Ecg, $SpO2, $Temperature, $Bpm);
 
         // تنفيذ الاستعلام
         if ($stmt->execute()) {
