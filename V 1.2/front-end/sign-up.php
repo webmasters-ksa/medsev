@@ -84,7 +84,7 @@
     <div class="login__form signup__form ">
     <h2>Register Here</h2>
     <p>Already have an account?<a href="login.php">Log In</a></p>
-    <form action="">
+    <form action="../back-end/forms/register.php" method="post">
       <div class="row">
         <div class="col-lg-6">
           <input type="text" name="text" placeholder="First Name" id="firstNameUp" >

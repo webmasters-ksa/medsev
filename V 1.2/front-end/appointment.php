@@ -84,7 +84,7 @@
     
     
             <div class="table__cell__text__plan table__cell__text__plan2">
-                 <a href="index doctor.php"><span>Home</span></a>
+                 <a href="index-doctor.php"><span>Home</span></a>
                 <i class="fa-solid fa-chevron-right"></i>
                 <span>Appointment</span>
             </div> <!-- table__cell__text__plan -->

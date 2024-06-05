@@ -83,8 +83,69 @@
         <div class="col-lg-6 ">
 <div class="login__form ">
 <h2>Login Here</h2>
-<p>Didn't you account yet?<a href="sign up.php">Register Here</a></p>
-<form action="">
+<p>Didn't you account yet?<a href="sign-up.php">Register Here</a></p>
+<?php
+// اتصال بقاعدة البيانات
+require_once "../back-end/config/conn.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // استقبال البيانات من نموذج الدخول
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // البحث في جدول الإداريين
+    $admin_sql = "SELECT * FROM admin WHERE email = ? AND password = ?";
+    if($stmt = $conn->prepare($admin_sql)){
+        $stmt->bind_param("ss", $email, $password);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            if($result->num_rows == 1){
+                // توجيه المستخدم إلى صفحة الإدارة
+                header("Location: index-admin.php");
+                exit();
+            }
+        }
+    }
+
+// البحث في جدول الأطباء
+$doctor_sql = "SELECT id FROM doctor WHERE Email = ? AND password = ?";
+if($stmt = $conn->prepare($doctor_sql)){
+    $stmt->bind_param("ss", $email, $password);
+    if($stmt->execute()){
+        $result = $stmt->get_result();
+        if($result->num_rows == 1){
+            // استرجاع الـ ID
+            $row = $result->fetch_assoc();
+            $doctor_id = $row['id'];
+            // توجيه المستخدم إلى صفحة الطبيب مع إضافة الـ ID إلى الرابط
+            header("Location: index-doctor.php?id=" . urlencode($doctor_id));
+            exit();
+        }
+    }
+}
+
+
+    // البحث في جدول المرضى
+    $patient_sql = "SELECT * FROM patient WHERE email = ? AND password = ?";
+    if($stmt = $conn->prepare($patient_sql)){
+        $stmt->bind_param("ss", $email, $password);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            if($result->num_rows == 1){
+                // توجيه المستخدم إلى صفحة المريض
+                header("Location: patient-page.php");
+                exit();
+            }
+        }
+    }
+
+    // إذا لم يتم العثور على مطابقة في أي جدول، عادةً ما يتم توجيه المستخدم إلى صفحة تسجيل الدخول مرة أخرى مع رسالة خطأ
+    header("Location: login.php?error=1");
+    exit();
+}
+?>
+
+<form action="" method="POST">
   <div class="row d-flex justify-content-center">
  
 
@@ -96,10 +157,7 @@
     </div>
     
 
-    <div class="col-sm-9">
-      <p><a href="forget password.php">Forgot Password?</a></p>
-    </div>
-
+   
     <div class="col-sm-9 text-center">
 <button class="btn1" id="btnLogin">Login</button>
     </div>

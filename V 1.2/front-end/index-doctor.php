@@ -45,7 +45,7 @@
                 <a class="nav-link" href="about doctor.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="doctor profile.php">Profile</a>
+                <a class="nav-link" href="doctor-profile.php">Profile</a>
               </li>
     
               <li class="nav-item">

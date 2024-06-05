@@ -44,15 +44,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="about patient.php">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sick profile.php">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index doctor.php">index doctor</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index-admin.php">index-admin.php</a>
-              </li>
+         
+            
+             
 
               <li class="nav-item">
                 <a class="nav-link" href="contact us.php">Contact Us</a>

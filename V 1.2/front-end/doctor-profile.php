@@ -44,10 +44,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sick profile.php">Profile</a>
-
-              </li>
+            
         
               <li class="nav-item">
                 <a class="nav-link" href="contact us.php">Contact Us</a>
@@ -80,86 +77,89 @@
       <!-- end nav -->
 
 <!-- start table-cell -->
-<section class="table-cell doctor-padge">
-<div class="container">
-    <div class="table__cell">
-        <div class="table__cell__text">
+<?php
+// اتصال بقاعدة البيانات
+require_once "../back-end/config/conn.php";
 
-        <h2>Dr. Mohammad Abdullah</h2>
-        <span>Internal Medicine and Nephrology</span>
+// التحقق من وجود معرف ممرر عبر الرابط
+if(isset($_GET['id']) && !empty($_GET['id'])){
+    // استخراج معرف السجل
+    $id = $_GET['id'];
 
-        </div> <!-- table__cell__text -->
-    </div> <!-- table__cell -->
-
+    // استعداد الاستعلام لاسترجاع بيانات السجل المراد تعديله
+    $sql = "SELECT * FROM doctor WHERE id = ?";
     
-</div> <!-- container -->
+    if($stmt = $conn->prepare($sql)){
+        // ربط المتغيرات مع البيانات
+        $stmt->bind_param("i", $id);
+        
+        // محاولة تنفيذ الاستعلام
+        if($stmt->execute()){
+            // استخراج نتيجة الاستعلام
+            $result = $stmt->get_result();
+            
+            if($result->num_rows == 1){
+                // استخراج البيانات ووضعها في العناصر في الصفحة
+                $row = $result->fetch_assoc();
+                ?>
+                
+                <section class="table-cell doctor-padge">
+                    <div class="container">
+                        <div class="table__cell">
+                            <div class="table__cell__text">
+                                <h2><?php echo $row['Name']; ?></h2>
+                                <span><?php echo $row['Specialty']; ?></span>
+                            </div> <!-- table__cell__text -->
+                        </div> <!-- table__cell -->
+                    </div> <!-- container -->
+                </section> <!-- table-cell -->
 
+                <section class="doctor-profile patient-profile doctor-profile">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5 ">
+                                <div class="doctorprofile">
+                                    <div class="doctorprofile__img">
+                                        <img src="../back-end/upload/<?php echo $row['image_path']; ?>" alt="Doctor Image">
+                                    </div>  <!-- doctorprofile__img -->
+                                    <div class="doctorprofile__text">
+                                        <div class="doctorprofile__text__contact">
+                                            <h2>Contact info</h2>
+                                            <ul class="d-flex flex-column">
+                                                <li><i class="fa-solid fa-phone"></i> <span>Call : <?php echo $row['Phone']; ?></span></li>
+                                                <li><i class="fa-solid fa-location-dot"></i> <span><?php echo $row['Email']; ?></span></li>
+                                                <li><i class="fa-solid fa-location-dot"></i> <span><?php echo $row['Specialty']; ?></span></li>
+                                                <li><i class="fa-solid fa-location-dot"></i> <span><?php echo $row['Qualifications']; ?></span></li>
+                                                <li><i class="fa-solid fa-location-dot"></i> <span><?php echo $row['Age']; ?></span></li>
+                                            </ul>
+                                            
+                                        </div> <!-- doctorprofile__text__contact -->
+                                    </div> <!-- doctorprofile__text -->
+                                </div> <!-- doctorprofile -->
+                            </div> <!-- col-lg-5 -->
+                        </div> <!-- row -->
+                    </div> <!-- container -->
+                </section> <!-- doctor-profile -->
 
-
-</section> <!-- table-cell -->
-<!-- end table-cell -->
-
-
-<!-- start doctor-profile -->
-<section class="doctor-profile patient-profile doctor-profile">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 ">
-                <div class="doctorprofile">
-            <div class="doctorprofile__img">
-                     <img src="images/WhatsApp Image 2024-05-06 at 20.12.17_2f5e399f.jpg" alt="">
-            </div>  <!-- doctorprofile__img -->
-                    
-
-                    <div class="doctorprofile__text">
-<div class="doctorprofile__text__contact">
-<h2>Contact info</h2>
-
-    <ul class="d-flex flex-column" >
-      <li> <i class="fa-solid fa-phone"></i> <span>Call : +20 101 080 9962    </span> </li>
-   
-      <li>  <i class="fa-solid fa-location-dot"></i> <span> Fayoum General Hospital</span></li>
-    </ul>
-
+                <?php
+            } else{
+                echo "لا يوجد بيانات للعرض.";
+            }
+        } else{
+            echo "حدث خطأ ما، يرجى المحاولة مرة أخرى.";
+        }
+    }
     
-<div class="patient__profile">
-    <a href="update-patient.php">
-        <button class="btn__app">
-            update info
-        </button>
-    </a>
-    
+    // إغلاق الاستعلام
+    $stmt->close();
+} else{
+    echo "المعرف غير موجود.";
+}
 
-</div> <!-- patient__profile -->
-</div> <!-- doctorprofile__text__contact -->
+// إغلاق الاتصال بقاعدة البيانات
+$conn->close();
+?>
 
-                    </div> <!-- doctorprofile__text -->
-                    
-                </div> <!-- doctorprofile -->
-            </div> <!-- col-lg-5 -->
-
-
-            <div class="col-lg-7">
-                <div class="doctorinfo">
-
-                    <div class="doctorinfo__phy doctorinfo__ed">
-                    <h4>Education</h4>
-
-        <ul>
-      <li>Head of the kidney department at Fayoum General Hospital</li>
-      <li>Master's degree in Nephrology</li>
-
-
-        </ul>
-                        </div> <!-- doctorinfo__phy -->
-    
-                </div> <!-- doctorinfo -->
-
-            </div> <!-- col-lg-7 -->
-        </div> <!-- row --> 
-    </div> <!-- container -->
-</section> <!-- doctor-profile -->
-<!-- end doctor-profile -->
 
 
 

@@ -44,9 +44,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sick profile.php">Profile</a>
-              </li>
+            
 
               <li class="nav-item">
                 <a class="nav-link" href="contact us.php">Contact Us</a>

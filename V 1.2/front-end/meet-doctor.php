@@ -50,10 +50,7 @@ $result = $conn->query($sql);
               <li class="nav-item">
                 <a class="nav-link" href="about patient.php">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sick profile.php">Profile</a>
-
-              </li>
+           
     
               <li class="nav-item">
                 <a class="nav-link" href="contact us.php">Contact Us</a>
@@ -121,7 +118,7 @@ $result = $conn->query($sql);
                     echo '<a href="doctor-details.php?id=' . $row["id"] . '"><img src="../back-end/upload/' . $row["image_path"] . '" alt="Doctor Image"></a>';
                     echo '</div>'; // choose__doctor__img
                     echo '<div class="choose__doctor__text">';
-                    echo '<h2><a href="doctor-details.php?id=' . $row["id"] . '">' . $row["Name"] . '</a></h2>';
+                    echo '<h2><a href="doctor-profile.php?id=' . $row["id"] . '">' . $row["Name"] . '</a></h2>';
                     echo '<p>' . $row["Specialty"] . '</p>';
                     echo '</div>';
                     echo '</div>'; // choose__doctor
