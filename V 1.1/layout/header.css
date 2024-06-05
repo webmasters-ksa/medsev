@@ -1,0 +1,127 @@
+
+.home {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: 90vh; 
+}
+.home .home__text .home__text__face h1{
+    font-family:gothamone ;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+.home .home__text .home__text__face p {
+    color: #616263;
+    margin-bottom: 35px;
+
+  
+}
+.home .home__text .home__text__btn .home__text__btn--btn{
+    padding: 10px 18px;
+    border: 2px solid transparent;
+    color: #ffffff;
+    background-color: #0046c0;
+    font-family:gothamfive ;
+    font-size: 13px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-right: 12px;
+    transition: 0.5s all ease;
+}
+.home .home__text .home__text__btn .home__text__btn--btn:hover{
+    background-color: transparent;
+    border: 2px solid #0046c0;
+    color: #0046c0;
+}
+.home .home__text .home__text__btn .home__text__btn--btn2{
+    background-color: transparent;
+    border: 2px solid #0046c0;
+    color: #0046c0;
+}
+.home .home__text .home__text__btn .home__text__btn--btn2:hover{
+    border: 2px solid transparent;
+    color: #ffffff;
+    background-color: #0046c0;
+}
+.home__img__coluction{
+    position: relative;
+}
+.home .home__img img{
+    position:absolute;
+    max-width: 400px;
+
+}
+.home .home__img img:nth-child(1){
+    top: -110px;
+    right: 10px;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home .home__img img:nth-child(2){
+    top: -110px;
+    right: 15px;
+    animation: a-four 5s infinite linear;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home .home__img img:nth-child(3){
+    top: -110px;
+    right: 0px;
+    animation: a-five 5s infinite linear;
+    margin-left: auto;
+}
+.home .home__img img:nth-child(4){
+    bottom: -51px;
+    right: 140%;
+    max-width: 250px;
+    z-index: -1;
+   
+    animation: a-eight 20s infinite linear;
+
+}
+
+
+@keyframes a-four{
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(-10px, -10px);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes a-five{
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(10px, 10px);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+
+
+@keyframes a-eight{
+    0%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(75px, 0);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+
+
+
+
+

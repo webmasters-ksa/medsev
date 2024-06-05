@@ -1,0 +1,54 @@
+
+@import url("../layout/header.css");
+@import url("../layout/footer.css");
+@import url("../layout/navbar.css");
+@import url("../vendore/animate.css");
+@import url("../vendore/bootstrap.min.css");
+@import url("@icon/icofont/icofont.css");
+@import url("https://unpkg.com/@icon/icofont/icofont.css");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+@import url("../component/table cell.css");
+@import url("../component/inputnone.css");
+@import url("../component/btn.css");
+
+@import url("../base/base.css");
+@import url("../pages/login.css");
+@import url("../pages/signup.css");
+@import url("../pages/index.css");
+@import url("../pages/meet doctor.css");
+@import url("../pages/doctor'spage.css");
+@import url("../pages/diagnosis.css");
+@import url("../pages/patient'spersonal..css");
+@import url("../pages/sick profile.css");
+@import url("../pages/update patient.css");
+@import url("../pages/forget password.css");
+@import url("../pages/appointment.css");
+@import url("../pages/patient record.css");
+@import url("../pages/index admin.css");
+@import url("../pages/doctor info.css");
+@import url("../pages/patient info.css");
+@import url("../pages/about.css");
+@import url("../pages/doctor profile.css");
+
+@import url("../responsive/responsive.css");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* html{
+    height: 2000px;
+} */
+

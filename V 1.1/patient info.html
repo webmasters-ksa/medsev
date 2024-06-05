@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medsev - Healthcare Clinic</title>
+    
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- start nav -->
+<nav class="header ">
+    <div id="navbar">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png"  alt=""></a>
+                <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon">
+                        <svg viewBox="0 0 175 80" width="45" height="35">
+                            <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                            <rect y="30" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                            <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                        </svg>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                    </ul>
+                    <div class="navbar__log">
+                        <a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</nav>  
+<!-- end nav -->
+
+<!-- start table-cell -->
+<section class="table-cell patient-personal">
+    <div class="container">
+        <div class="table__cell">
+            <div class="table__cell__text">
+                <h2>View Data of Patients</h2>
+                <div class="table__cell__text__plan table__cell__text__plan2">
+                     <a href="index admin.html"><span>Home</span></a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>patient</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end table-cell -->
+
+<section class="appointment patient-infoo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="doctor__apps d-flex justify-content-center">
+                    <div class="doctor__app doctor__app__pe my-3">
+                        <h2>Edit Patient's Data</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="meet__doctor__search">
+                                    <div class="meet__doctor__search__icon">
+                                        <i class="icofont icofont-business-man-alt-1"></i>
+                                    </div>
+                                    <form action="#" class="meet__doctor__search__meet">
+                                        <label for="nameapp">Name</label>
+                                        <input type="text" id="nameapp" placeholder="Enter Your Name" name="search">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="doctor__app__btn">
+                            <button class="btn__app" type="submit">Submit</button>
+                        </div>
+                    </div>
+                    <div class="doctor__app__img">
+                        <img src="images/3.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="appointment__teb">
+                    <table class="table mt-5 text-center table-bordered table-striped">
+                        <thead>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </thead>
+                        <tbody id="tBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popup Modal -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Patient's Data</h2>
+        <form id="editForm">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="FirstName" required>
+            <label for="middleName">Middle Name</label>
+            <input type="text" id="middleName" name="MiddleName">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="LastName" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required>
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="Phone" required>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- ///////////////////  js /////////////////////// -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const navbarLog = document.querySelector('.navbar__log');
+      const userData = JSON.parse(localStorage.getItem('userData'));
+  
+      if (userData && userData.name) {
+        navbarLog.innerHTML = `
+            <div class="dropdown">
+                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-regular fa-user"></i> ${userData.name}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </div>
+        `;
+            } else {
+          navbarLog.innerHTML = '<a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>';
+      }
+      const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            localStorage.removeItem('userData');
+            // إعادة التوجيه إلى صفحة تسجيل الدخول بعد تسجيل الخروج
+            window.location.href = "login.html";
+        });
+    }
+});
+</script>
+  
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Fetch patient data and populate table
+        const requestOptions = {
+            method: "GET",
+            redirect: "follow"
+        };
+
+        fetch("https://apis-amirican-university.quickly-egypt.com/public/api/patients", requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById("tBody");
+                data.forEach(patient => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${patient.Patient_id}</td>
+                        <td>${patient.FirstName} ${patient.MiddleName ? patient.MiddleName : ''} ${patient.LastName}</td>
+                        <td>${patient.Email}</td>
+                        <td>${patient.Phone}</td>
+                        <td><button class="btn__app" onclick="updatePatient(${patient.Patient_id})">Update</button></td>
+                        <td><button class="btn__app" onclick="deletePatient(${patient.Patient_id})">Delete</button></td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error(error));
+
+        // Function to delete a patient
+        window.deletePatient = function (patientId) {
+            const requestOptions = {
+                method: "DELETE",
+                redirect: "follow"
+            };
+
+            fetch(`https://apis-amirican-university.quickly-egypt.com/public/api/patients/${patientId}`, requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result);
+                    // Optionally, you can remove the deleted row from the table
+                })
+                .catch(error => console.error(error));
+        };
+
+        // Function to update a patient
+        window.updatePatient = function (patientId) {
+            // Fetch patient data by ID
+            fetch(`https://apis-amirican-university.quickly-egypt.com/public/api/patients/${patientId}`)
+                .then(response => response.json())
+                .then(patient => {
+                    // Fill form with patient data
+                    document.getElementById("firstName").value = patient.FirstName;
+                    document.getElementById("middleName").value = patient.MiddleName || '';
+                    document.getElementById("lastName").value = patient.LastName;
+                    document.getElementById("email").value = patient.Email;
+                    document.getElementById("phone").value = patient.Phone;
+
+                    document.getElementById("editForm").onsubmit = function (event) {
+                        event.preventDefault();
+                        // Update patient data
+                        const updatedPatient = {
+                            FirstName: document.getElementById("firstName").value,
+                            MiddleName: document.getElementById("middleName").value,
+                            LastName: document.getElementById("lastName").value,
+                            Email: document.getElementById("email").value,
+                            Phone: document.getElementById("phone").value
+                        };
+
+                        fetch(`https://apis-amirican-university.quickly-egypt.com/public/api/patients/${patientId}`, {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(updatedPatient)
+                        })
+                        .then(response => response.json())
+                        .then(result => {
+                            console.log(result);
+                            // Close modal and refresh table or show success message
+                            modal.style.display = "none";
+                        })
+                        .catch(error => console.error(error));
+                    };
+                })
+                .catch(error => console.error(error));
+
+            // Show modal
+            modal.style.display = "block";
+        };
+
+        // Modal functionality
+        const modal = document.getElementById("editModal");
+        const span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    });
+</script>
+
+<style>
+    /* Modal styles */
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgba(0,0,0,0.5); 
+        padding-top: 60px;
+    }
+    .modal-content {
+        background-color: #fff;
+        margin: 5% auto; 
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        width: 80%; 
+        max-width: 600px;
+        position: relative;
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+    }
+    .modal-content h2 {
+        margin-top: 0;
+        color: #333;
+    }
+    .modal-content form {
+        display: flex;
+        flex-direction: column;
+    }
+    .modal-content label {
+        margin: 10px 0 5px;
+        color: #555;
+    }
+    .modal-content input[type="text"],
+    .modal-content input[type="email"] {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .modal-content button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+    .modal-content button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+</body>
+</html>

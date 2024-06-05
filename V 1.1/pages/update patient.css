@@ -1,0 +1,42 @@
+.update-patient .meet__doctor__search__meet input{
+    border-bottom: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+
+    border: 1px solid #4a6f8a;
+}
+.change__info{
+    margin-bottom: 26px;
+}
+.change__info__text {
+    background-color: #4a6f8a;
+    padding: 2px 0px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+.change__info__text h3{
+    font-size: 25px;
+    margin: 14px 0px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-family:gothamseven ;
+    text-transform: capitalize;
+}
+.update-patient .meet__doctor__search:nth-of-type(1){
+    padding-top: 25px;
+}
+.update-patient .meet__doctor__search{
+    padding: 10px 0px;
+}
+.patient__profile__btn{
+    margin-top: 25px;
+    display: flex;
+    gap: 30px;
+
+}
+.patient__profile__forget{
+    cursor: pointer;
+}

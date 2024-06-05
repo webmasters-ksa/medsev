@@ -1,0 +1,334 @@
+@media screen and (max-width:1024px){
+    .patient .patient__text h2{
+        font-size: 30px;
+        margin-bottom: 20px;
+
+    }
+    .table__cell .table__cell__text h2{
+        font-size: 30px;
+    }
+    .choose__doctor{
+        margin: 0px 0px ;
+        margin-bottom: 30px;
+    }
+    .change__info__text h3 {
+        font-size: 22px;
+    }
+    .login .login__form h2 {
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (max-width:992px){
+    .home {
+        height: 100vh; 
+    }
+    .home .home__img img{
+        max-width: 300px;
+    }
+    .home__img__coluction{
+        position: relative;
+        height: 180px   ;
+        right: 24%;
+        top: -21px;
+        
+    }
+    .home .home__text{
+        text-align: center;
+    }
+    .home .home__text .home__text__face h1{
+        font-size: 26px;
+        font-family:gothamseven ;
+
+
+    }
+    
+    .home .home__img img:nth-child(4){
+        bottom: -51px;
+        right: 140%;
+        max-width: 250px;
+        z-index : -1;
+        display: none;
+       
+        animation: a-eight 20s infinite linear;
+    
+    }
+    .patient .patient__text h2{
+        font-size: 26px;
+        margin-bottom: 20px;
+
+    }
+    .table__cell .table__cell__text h2{
+        font-size: 26px;
+    }
+    
+    .patient .patient__option .patient__option__choosee {
+      
+        margin: 20px 0px;
+    }
+    .doctorprofile{
+        top: 0px;
+        padding-top: 50px;
+    }
+    .doctor__app {
+        padding: 70px 20px;
+    }
+    .doctor__appimg{
+        margin-top: 25px;
+    }
+    .doctor__appimg .meet__doctor__search .meet__doctor__search__icon {
+    
+        width: 56px;
+        height: 39px;
+}
+.doctor__appimg .meet__doctor__search h3{
+    font-size: 22px;
+}
+.doctor__app .meet__doctor__search {
+    padding: 20px 0px;
+}
+.appointment__screen{
+    display: block;
+}
+.appointment__teb{
+    display: none;
+}
+.doctor__app__img img {
+    width: 170px;
+}
+  .change__info__text h3 {
+    font-size: 20px;
+}
+.doctor-padge .table__cell {
+    justify-content: center;
+}
+.login .login__form h2 {
+    font-size: 25px;
+}
+.about-patient .about__patinet__text h2{
+    font-size: 22px;
+}
+.about-patient .about__patinet__text ul li span{
+
+    font-size: 17px;
+
+}
+.about-patient .about__patinet__text span:last-child,.about-patient .about__patinet__text p,.about-patient .about__patinet__text ul li p{
+    font-size: 16px;
+}
+}
+
+@media screen and (max-width:768px){
+    .home__img__coluction{
+      
+       
+        right: 26%;
+  
+        
+    }
+    .home .home__img img{
+        max-width: 220px;
+    }
+    .home__img__coluction{
+        position: relative;
+        height: 212px;
+        top: 31px;
+    }
+    .appointment__screen .table th, .appointment__screen .table td {
+        padding: 10px 8px; 
+        font-size: 15px;
+    }
+
+    .appointment__screen .table th span, .appointment__screen .table td span {
+        display: block; 
+        font-size: 13px;
+    }
+    .btn__app__table{
+        font-size: 13px;
+        padding: 9px 10px;
+      }
+      .btn__app__table{
+      
+        margin-right: 48px;
+        width: 80px;
+    }
+    .doctor__app__img img {
+        width: 140px;
+    }
+    .login .login__img img {
+        height: auto;
+        object-fit: scale-down;
+        margin-top: 40px;
+    }
+ 
+    .patient .patient__option .patient__option__choosee2{
+     
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width:600px){
+    .home__img__coluction {
+        position: relative;
+        height: 90px;
+        top: -60px;
+    }
+    .home .home__text .home__text__face h1{
+        font-size: 20px;
+        font-family:gothamseven ;
+
+
+    }
+    .home__heart__shape img {
+        width: 250px;
+    }
+    .patient .patient__text h2{
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .home__heart__shape{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .meet__doctor__search:nth-of-type(1){
+        margin-bottom: 15px;
+    }
+    .meet-doctor{
+        margin: 0px 10px;
+        padding: 30px 12px;
+        top: 65%;
+    }
+    .meet__doctor__search i{
+        font-size: 40px;
+    }
+    .choose-doctor {
+        padding: 155px 0px;
+    }
+    .table__cell .table__cell__text h2{
+        font-size: 22px;
+    }
+    .table__cell__text__plan{
+        margin-bottom: 55px;
+    }
+    .doctorprofile .doctorprofile__text .doctorprofile__text__Working ul:nth-of-type(1) li{
+        position: static;
+
+    }
+    .doctorprofile .doctorprofile__text .doctorprofile__text__Working ul li span {
+        margin-right: 20px;
+    }
+    .doctorprofile .doctorprofile__text .doctorprofile__text__Working ul:nth-of-type(1) li::after {
+        position: static;
+    }
+    .doctorinfo {
+        padding: 50px 5px;
+    }
+    .doctorinfo__ed ul li{
+        margin-bottom: 10px;
+    }
+   
+    .doctor__appimg .meet__doctor__search {
+        bottom: -21px;
+      }
+
+      .doctor__app {
+        padding: 70px 16px;
+    }
+    .table__cell__text__plan2{
+        margin-bottom: 0px;
+    }
+    .btn__app__table{
+      
+          margin-right: 0px;
+    }
+    .appointment__screen .table td span:last-child, .appointment__screen .table th span:last-child{
+        margin: 0;
+    }
+    .btn__app__table{
+        margin: 0;
+    }
+    .change__info__text h3 {
+        font-size: 18px;
+    }
+    .login .login__form p {
+    
+        font-size: 15px;
+    }
+    .home__img__coluction {
+        position: relative;
+        height: 182px;
+        top: 26px;
+    }
+
+    
+    
+       
+     
+
+}
+
+@media screen and (max-width:425px){
+    .home__img__coluction {
+        position: relative;
+        height: 139px;
+        top: 7px;
+    }
+    .home .home__text .home__text__face h1{
+        font-size: 20px;
+        font-family:gothamseven ;
+
+
+    }
+    .home__img__coluction{
+      
+        right: 17%;
+  
+        
+    }
+    .home__heart__shape img {
+        width: 200px;
+    }
+    .home .home__img img:nth-child(2){
+      
+        right: 5px;
+     
+    }
+    .appointment__screen .table {
+        box-shadow: none;
+    }
+    .home__img__coluction {
+        right: 22%;
+    }
+}
+@media screen and (max-width:375px){
+    .home__heart__shape img {
+        width: 170px;
+    }
+        .home__img__coluction {
+            position: relative;
+            height: 160px;
+            top: 17px;
+        }
+        .login .login__form p:last-child a {
+            font-size: 15px;
+        }
+        .home__img__coluction {
+            right: 12%;
+        }
+        .about-patient .about__patinet__text ul li span {
+            font-size: 14.5px;
+        }
+        .about-patient .about__patinet__text ul li i {
+            font-size: 15px;
+            margin-right: 6px;
+        }
+        .about-patient .about__patinet__text h2 {
+            font-size: 17px;
+        }
+        .about-patient .about__patinet__text span:last-child,.about-patient .about__patinet__text p,.about-patient .about__patinet__text ul li p{
+            font-size: 15px;
+        }
+}
+
