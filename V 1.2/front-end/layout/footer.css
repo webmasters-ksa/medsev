@@ -1,0 +1,93 @@
+.footer{
+    padding: 100px 0px;
+    background-image: url(../images/14.png);
+    background-size: cover;
+    background-position:  center center;
+    background-color: #0843aa;
+    color: white;
+    box-shadow: 0px 0px 15px 0px #ddd;
+}
+
+.footer .footer__list h2{
+    font-size: 25px;
+    padding: 25px 0px;
+
+}
+.footer .footer__list li{
+    padding: 10px 0px ;
+    display: flex;
+}
+.footer .footer__list li p{
+    padding-left: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+.footer .footer__list li a{
+    display: block;
+    transition: all 0.5s;
+}
+.footer .footer__list li a:hover{
+    transform: translateX(5px);
+}
+.footer .footer__list li i{
+    font-size: 40px;
+    padding-top: 10px;
+    width: 35px;
+    text-align: center;
+}
+
+.footer .footer__list li a{
+    font-size: 18px;
+    font-weight: 600; 
+
+}
+.footer .footer__list .footer__form ul li input ,.footer .footer__list .footer__form ul li textarea{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    outline: none;
+    box-shadow: none;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+.footer .footer__list .footer__form ul li input::placeholder ,.footer .footer__list .footer__form ul li textarea::placeholder{
+    color: #ffffffb3;
+    font-weight: 500;
+}
+.footer .footer__list .footer__form ul li textarea{
+    resize: none;
+    height: 150px;
+}
+.footer .footer__list .footer__form ul li #btn1{
+    padding: 10px 30px;
+    border: 2px solid transparent;
+    background-color: white;
+    color: #0843aa;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 23px;
+    transition: all 0.5s;
+    text-transform: uppercase;
+}
+footer .footer__list .footer__form ul li #btn1:hover{
+    background-color: #001230;
+    color: white;
+}
+
+.footertwo{
+    background-color: #001230;
+}
+.footertwo p{
+    color: white;
+    font-weight: 600;
+
+}
+.footertwo p a{
+    transition: all 0.5s;
+}
+
+.footertwo p a:hover{
+    color: #0843aa;
+}

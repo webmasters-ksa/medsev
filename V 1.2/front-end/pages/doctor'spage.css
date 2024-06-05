@@ -1,0 +1,229 @@
+.doctor-padge .table__cell{
+    justify-content: end;
+}
+.doctor-padge .table__cell .table__cell__text{
+    align-items: start;
+}
+.doctor-padge .table__cell .table__cell__text h3{
+    font-family:gothamseven ;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.doctor-padge .table__cell .table__cell__text span{
+    font-size: 20px;
+    font-family:gothamfive ;
+    text-transform: capitalize;
+
+
+}
+
+.doctorprofile{
+    position: relative;
+    top: -150px;
+    z-index: 1;
+    box-shadow: 0 0 10px 0 #ddd;
+  
+}
+.doctorprofile .doctorprofile__img{
+    margin-bottom: 50px;
+}
+.doctorprofile .doctorprofile__text{
+padding: 0px 20px;
+}
+.doctorprofile .doctorprofile__text .doctorprofile__text__contact{
+    margin-bottom: 50px;
+}
+.doctorprofile .doctorprofile__text .doctorprofile__text__contact h2{
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-family:gothamseven ;
+    color: #4a6f8a;
+}
+.doctorprofile .doctorprofile__text .doctorprofile__text__contact ul , .doctorprofile .doctorprofile__text .doctorprofile__text__Working ul{
+    line-height: 3;
+}
+.doctorprofile .doctorprofile__text .doctorprofile__text__contact ul li i{
+    color: #0046c0;
+    margin-right: 8px;
+    font-size: 23px;
+
+}
+
+.doctorprofile .doctorprofile__text .doctorprofile__text__contact ul li span{
+    font-size: 16px;
+    font-family:gothamfive ;
+    color: #858585;
+}
+
+.doctorprofile .doctorprofile__text .doctorprofile__text__Working h3{
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-family:gothamseven ;
+    color: #4a6f8a;
+}
+
+.doctorprofile .doctorprofile__text .doctorprofile__text__Working ul li span{
+    color: #4a6f8a;
+    font-size: 13px;
+    font-family:gothamseven ;
+    text-transform: capitalize;
+}
+.doctorprofile .doctorprofile__text .doctorprofile__text__Working ul li span{
+    margin-right: 60px;
+}
+
+.doctorprofile .doctorprofile__text .doctorprofile__text__Working ul:nth-of-type(1) li{
+    position: relative;
+}
+.doctorprofile .doctorprofile__text .doctorprofile__text__Working ul:nth-of-type(1) li::after{
+content: "";
+position: absolute;
+width: 35px;
+height: 2px;
+right: 5px;
+bottom: 21px;
+z-index: 1;
+background-color: #b7b2b2;
+ margin-right: 10px;
+}
+.doctorinfo{
+    padding: 50px 40px;
+}
+.doctorinfo .doctorinfo__phy{
+    margin-bottom: 60px;
+}
+.doctorinfo .doctorinfo__phy h4{
+    font-family:gothamseven ;
+    font-size: 24px;
+    color: #2f60bd;
+    margin-bottom: 25px;
+    line-height: 1.7;
+
+
+
+}
+.doctorinfo .doctorinfo__phy p,.doctorinfo .doctorinfo__phy span{
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-family:gothamfive ;
+    font-size: 15px;
+
+
+}
+
+.doctorinfo__ed ul li{
+
+    font-family:gothamfive ;
+    font-size: 15px;
+    padding: 15px 0px;
+
+}
+.doctor-app{
+    padding: 50px 0px;
+}
+.doctor__apps{
+    position: relative;
+
+    
+}
+.doctor__app{
+    width: 660px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px 0 #ddd;
+
+}
+
+.doctor__app__img{
+    position: absolute;
+    top: -90px;
+    left:80px;
+    z-index: 1;
+    animation: a-six 5s infinite linear;
+}
+.doctor__app__img img{
+    width: 220px;
+}
+@keyframes a-six{
+    0% {
+
+        transform: translate(0, 0);
+    }
+
+    50% {
+        
+        transform: translate(0, 60px);
+    }
+    100% {
+
+        transform: translate(0, 0);
+    }
+}
+.doctor__app{
+    padding: 70px 40px;
+    
+}
+
+.doctor__app h2{
+    font-size: 23px;
+    font-family:gothamseven ;
+    color: #0046c0;
+    margin-bottom: 10px;
+
+}
+
+.doctor__app p{
+    color: #4a6f8a;
+    font-size: 15px;
+    font-family:gothamseven ;
+
+}
+.doctor__app__btn{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.doctor__app .meet__doctor__search{
+    padding: 35px 0px;
+}
+.doctor__appimg{
+    position: relative;
+}
+.doctor__appimg img{
+    padding: 0px 25px;
+}
+
+.doctor__appimg .meet__doctor__search{
+    position: absolute;
+    bottom: 45px;
+    background-color: #0046c0;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+.doctor__appimg .meet__doctor__search .meet__doctor__search__icon {
+transform: rotate(45deg);
+position: relative;
+width: 40px;
+height: 40px;
+background-color: white;
+
+}
+.doctor__appimg .meet__doctor__search .meet__doctor__search__icon i{
+    transform: rotate(-45deg);
+    color: #0046c0;
+
+    font-size: 18px;
+    position: absolute;
+    top: 8px;
+    left: 11px;
+}
+.doctor__appimg .meet__doctor__search h3{
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+.doctor__appimg .meet__doctor__search p{
+    font-size: 18px;
+}

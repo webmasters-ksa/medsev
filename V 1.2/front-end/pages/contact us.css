@@ -1,0 +1,67 @@
+.table-cell2{
+    background-image: url(../images/1\ \(1\).jpg);
+}
+.contact{
+    background-image: url(../images/2\ \(1\).png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px 0px;
+}
+.contact h2{
+    font-family:gothamseven ;
+    font-size: 27px;
+    text-transform: capitalize;
+}
+.contact input {
+    margin-top: 30px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 15px 0 rgba(221, 221, 221, .6392156863);
+    padding: 8px 7px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family:gothamfive ;
+}
+.contact input::placeholder,.contact textarea::placeholder{
+    font-size: 15px;
+    font-family:gothamfive ;
+
+}
+.contact input:focus{
+    border-bottom: none;
+}
+    
+
+.contact textarea{
+    margin-top: 20px;
+    box-shadow: 0 0 15px 0 rgba(221, 221, 221, .6392156863);
+
+}
+
+.contact .contact__datiles .contact__datiles__info {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-top: 20px;
+    align-items: baseline;
+}
+.contact__datiles {
+    padding: 0px 25px;
+    
+}
+.contact__datiles .contact__datiles__text h3{
+    font-family:gothamseven ;
+    font-size: 27px;
+    text-transform: capitalize;
+}
+.contact .contact__datiles .contact__datiles__info{
+    margin-bottom: 12px;
+}
+.contact__datiles__info__text h4{
+    margin-bottom: 5px;
+}
+.contact__datiles__info__text p{
+    font-size: 15px;
+    font-family:gothamfive ;
+
+
+}
