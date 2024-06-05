@@ -44,7 +44,10 @@
               <li class="nav-item">
                 <a class="nav-link" href="about patient.php">About</a>
               </li>
-         
+              <li class="nav-item">
+                <a class="nav-link" href="sick profile.php">Profile</a>
+
+              </li>
             
              
 

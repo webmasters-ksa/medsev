@@ -133,7 +133,7 @@ if($stmt = $conn->prepare($doctor_sql)){
             $result = $stmt->get_result();
             if($result->num_rows == 1){
                 // توجيه المستخدم إلى صفحة المريض
-                header("Location: patient-page.php");
+                header("Location: index.php");
                 exit();
             }
         }

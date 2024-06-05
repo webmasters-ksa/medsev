@@ -44,28 +44,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="about doctor.php">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="doctor-profile.php">Profile</a>
-              </li>
+           
     
               <li class="nav-item">
                 <a class="nav-link" href="contact us.php">Contact Us</a>
               </li>
        
-              <li class="dropdown">
-                <a class="dropdown__btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="icofont icofont-settings"></i> <span>Settings</span> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="update-patient.php">Update Information</a></li>
-                    <li><a class="dropdown-item" href="login.php">Logout</a></li>
-                </ul>
-            </li>
-            </ul>
-            <div class="navbar__log">
-              <a href="login.php"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
-  
-            </div> <!-- navbar__log -->
+            
           </div>
         </div>
       </nav>
