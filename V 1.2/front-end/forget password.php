@@ -18,7 +18,7 @@
       <nav class="navbar navbar-expand-lg " >
      
         <div class="container" >
-          <a class="navbar-brand" href="index.php"><img src="images/logo.png"  alt=""></a>
+          <a class="navbar-brand" href="index.html"><img src="images/logo.png"  alt=""></a>
           
     
     
@@ -37,24 +37,24 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="sick profile.php">Profile</a>
+                <a class="nav-link" href="sick profile.html">Profile</a>
 
               </li>
  
               <li class="nav-item">
-                <a class="nav-link" href="contact us.php">Contact Us</a>
+                <a class="nav-link" href="#">Contact Us</a>
               </li>
        
             
             </ul>
             <div class="navbar__log">
-              <a href="login.php"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
+              <a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>
   
             </div> <!-- navbar__log -->
           </div>
@@ -76,7 +76,7 @@
     
     
             <div class="table__cell__text__plan table__cell__text__plan2">
-                 <a href="login.php"><span>LOGIN</span></a>
+                 <a href="login.html"><span>LOGIN</span></a>
                 <i class="fa-solid fa-chevron-right "></i>
                 <span>Forget password</span>
             </div> <!-- table__cell__text__plan -->
@@ -129,7 +129,7 @@
                                 <div class="patient__profile__btn">
                                     <button class="btn__app">confirm</button>
                       
-                                    <a href="login.php">
+                                    <a href="login.html">
                                         <button class="btn__app">cancel</button>
                                     </a>
                             </div> <!-- patient__profile__btn -->
@@ -250,8 +250,37 @@
         <!-- ///////////////////  js /////////////////////// -->
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const navbarLog = document.querySelector('.navbar__log');
+      const userData = JSON.parse(localStorage.getItem('userData'));
+  
+      if (userData && userData.name) {
+        navbarLog.innerHTML = `
+            <div class="dropdown">
+                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-regular fa-user"></i> ${userData.name}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </div>
+        `;
+            } else {
+          navbarLog.innerHTML = '<a href="login.html"><i class="fa-regular fa-user"></i> <span>LOGIN</span></a>';
+      }
+      const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            localStorage.removeItem('userData');
+            // إعادة التوجيه إلى صفحة تسجيل الدخول بعد تسجيل الخروج
+            window.location.href = "login.html";
+        });
+    }
+});
+</script>
+  
 
 </body>
 </html>
-
-

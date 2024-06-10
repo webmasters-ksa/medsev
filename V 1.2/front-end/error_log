@@ -1,0 +1,45 @@
+[09-Jun-2024 22:25:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/config/conn.php:8
+Stack trace:
+#0 /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/config/conn.php(8): mysqli->__construct()
+#1 /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/login.php(92): require_once('/home/quiczwaq/...')
+#2 {main}
+  thrown in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/config/conn.php on line 8
+[09-Jun-2024 22:25:44 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/config/conn.php:8
+Stack trace:
+#0 /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/config/conn.php(8): mysqli->__construct()
+#1 /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/login.php(92): require_once('/home/quiczwaq/...')
+#2 {main}
+  thrown in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/config/conn.php on line 8
+[09-Jun-2024 23:21:47 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:21:56 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:23:23 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:23:23 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:23:48 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:24:03 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:24:21 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:25:32 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:25:32 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:25:50 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:25:50 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:25:54 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:25:54 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:25:56 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:25:56 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:25:58 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:25:58 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:25:59 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:25:59 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:26:01 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:26:01 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:26:02 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:26:04 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:26:20 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:26:22 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:26:26 UTC] PHP Warning:  Undefined variable $home_link in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/back-end/includes/navbar.php on line 33
+[09-Jun-2024 23:30:00 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:30:13 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:36:33 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:36:39 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:38:59 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:40:40 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93
+[09-Jun-2024 23:41:19 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/quiczwaq/apis-amirican-university.quickly-egypt.com/front-end/doctor-profile.php on line 93

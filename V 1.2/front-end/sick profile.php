@@ -9,6 +9,7 @@ if(isset($_SESSION['user'])) {
 
     // الاتصال بقاعدة البيانات
     require_once "../back-end/config/conn.php";
+    
 
     // إعداد الاستعلام لاسترجاع البيانات
     $sql = "SELECT `name`, `email`, `phone`, `age` FROM `patient` WHERE `id` = '$patient_id'";
@@ -64,48 +65,68 @@ if(isset($_SESSION['user'])) {
     }
 }
 ?>
+<?php
+// استعلام لجلب البيانات
+$sql = "SELECT `id`, `patient_id`, `Ecg`, `SpO2`, `Temperature`, `Bpm` FROM `analysis` WHERE `patient_id` = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $patient_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
-            <div class="col-12">
-                <div class="doctorinfo doctorinfo2">
-                    <div class="container-fluid">
-                      <div class="row">
-                        <div class="col-lg-6">
-                          <div class="patient__profile__sensor d-flex flex-column text-center ">
+// تهيئة المتغيرات الافتراضية
+$Ecg = $SpO2 = $Temperature = $Bpm = "في انتظار جلب القياسات";
+
+// إذا كانت هناك بيانات، قم بتعيينها للمتغيرات
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $Ecg = $row['Ecg'];
+    $SpO2 = $row['SpO2'];
+    $Temperature = $row['Temperature'];
+    $Bpm = $row['Bpm'];
+}
+
+// إغلاق الاتصال بقاعدة البيانات
+$stmt->close();
+$conn->close();
+?>
+
+<div class="col-12">
+        <div class="doctorinfo doctorinfo2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="patient__profile__sensor d-flex flex-column text-center">
                             <i class="icofont icofont-heart-beat-alt"></i>
-                            <h3>30</h3>
+                            <h3><?php echo htmlspecialchars($Bpm); ?></h3>
                             <p>bpm Bulse Per Minute</p>
-                          </div> <!-- patient__profile__sensor -->
-                        </div> <!-- col-lg-6 -->
-                        <div class="col-lg-6">
-                          <div class="patient__profile__sensor d-flex flex-column text-center">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="patient__profile__sensor d-flex flex-column text-center">
                             <i class="icofont icofont-sunny-day-temp"></i>
-                            <h3>45</h3>
-                            <p>temperature </p>
-                          </div> <!-- patient__profile__sensor -->
-                        </div> <!-- col-lg-6 -->
-
-
-                        <div class="col-lg-6">
-                          <div class="patient__profile__sensor d-flex flex-column text-center">
+                            <h3><?php echo htmlspecialchars($Temperature); ?></h3>
+                            <p>temperature</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="patient__profile__sensor d-flex flex-column text-center">
                             <i class="icofont icofont-prescription"></i>
-                            <h3>35</h3>
+                            <h3><?php echo htmlspecialchars($Ecg); ?></h3>
                             <p>ecg</p>
-                          </div> <!-- patient__profile__sensor -->
-                        </div> <!-- col-lg-6 -->
-
-                        <div class="col-lg-6">
-                          <div class="patient__profile__sensor d-flex flex-column text-center">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="patient__profile__sensor d-flex flex-column text-center">
                             <i class="icofont icofont-heart-beat-alt"></i>
-
-                            <h3>32</h3>
+                            <h3><?php echo htmlspecialchars($SpO2); ?></h3>
                             <p>SpO2</p>
-                          </div> <!-- patient__profile__sensor -->
-                        </div> <!-- col-lg-6 -->
-                      </div> <!-- container-fluid -->
-                    </div> <!-- container-fluid -->
-                </div> <!-- doctorinfo -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            </div> <!-- col-lg-7 -->
         </div> <!-- row --> 
     </div> <!-- container -->
 </section> <!-- doctor-profile -->

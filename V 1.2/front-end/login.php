@@ -50,7 +50,7 @@
             </li>
   
             <li class="nav-item">
-              <a class="nav-link" href="contactus.php">Contact Us</a>
+              <a class="nav-link" href="contact%20us.php">Contact Us</a>
             </li>
      
           
@@ -161,6 +161,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="col-sm-9">
       <input type="password" name="password" placeholder="Password" id="passwordLogin">
     </div>
+    <div class="col-sm-9">
+                                <p><a href="forget password.php">forget password</a></p>
+                            </div>
     <div class="col-sm-9 text-center">
       <button class="btn1" id="btnLogin">Login</button>
     </div>

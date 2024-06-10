@@ -36,57 +36,103 @@ include "../back-end/includes/navbar.php";
           
        
         <div class="col-12">
-        <div class="appointment__teb">
+            <div class="appointment__teb">
+                <?php
+                // الاتصال بقاعدة البيانات
+                require_once "../back-end/config/conn.php";
+
+                // استعلام قاعدة البيانات لاسترجاع البيانات
+                $sql = "SELECT `id`, `name`, `email`, `phone` FROM `patient`";
+                $result = $conn->query($sql);
+
+                // إنشاء الجدول الديناميكي
+                if ($result->num_rows > 0) {
+                    echo "<table class='table mt-5 text-center table-bordered table-striped'>
+                            <thead>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Diagnosis</th>
+                                <th>Prescription</th>
+                            </thead>
+                            <tbody>";
+                    // عرض البيانات في الجدول
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                                <td>" . $row["id"] . "</td>
+                                <td>" . $row["name"] . "</td>
+                                <td>" . $row["email"] . "</td>
+                                <td>" . $row["phone"] . "</td>
+                                <td><a href='didagnosis.php?id=" . $row["id"] . "' class='btn__app'>Add</a></td>
+                                <td><a href='Prescription.php?id=" . $row["id"] . "' class='btn__app'>Add</a></td>
+                            </tr>";
+                    }
+                    echo "</tbody></table>";
+                } else {
+                    echo "لا توجد بيانات.";
+                }
+                ?>
+            </div> <!-- appointment__teb -->
+        </div> <!-- col-12 -->
+    </div> <!-- row -->
+
+    <div class="row">
         <?php
-// الاتصال بقاعدة البيانات
-require_once "../back-end/config/conn.php";
+        // إعادة الاتصال بقاعدة البيانات واسترجاع البيانات مرة أخرى
+        require_once "../back-end/config/conn.php";
+        $result = $conn->query($sql);
 
-// استعلام لاستعراض بيانات المرضى
-$sql = "SELECT id, name, email, phone FROM patient";
-$result = mysqli_query($conn, $sql);
-
-?>
-
-<table class="table mt-5 text-center table-bordered table-striped">
-    <thead>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Diagnosis</th>
-        <th>Prescription</th>
-    </thead>
-    <tbody id="tBody">
-        <?php
-        // التحقق مما إذا كان هناك صفوف متاحة في النتيجة
-        if (mysqli_num_rows($result) > 0) {
-            // تكرار الصفوف ووضع البيانات في الجدول
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['name'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['phone'] . "</td>";
-                echo "<td><a href='didagnosis.php?id={$row['id']}' class='btn__app'>Add</a></td>";
-                echo "<td><a href='Prescription.php?id={$row['id']}' class='btn__app'>Add</a></td>";
-                echo "</tr>";
+        // إذا كان هناك بيانات متاحة
+        if ($result->num_rows > 0) {
+            // عرض كل مريض في عمود منفصل
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="col-sm-6">';
+                echo '<div class="appointment__screen">';
+                echo '<table class="table mt-5 table-bordered table-striped">';
+                echo '<thead>';
+                echo '<tr>';
+                echo '<th scope="col"><span>ID:</span> <span>' . $row["id"] . '</span></th>';
+                echo '</tr>';
+                echo '</thead>';
+                echo '<tbody>';
+                echo '<tr>';
+                echo '<td><span>Name:</span> <span>' . $row["name"] . '</span></td>';
+                echo '</tr>';
+                echo '<tr>';
+                echo '<td><span>Email:</span> <span>' . $row["email"] . '</span></td>';
+                echo '</tr>';
+                echo '<tr>';
+                echo '<td><span>Phone:</span> <span>' . $row["phone"] . '</span></td>';
+                echo '</tr>';
+                echo '<tr>';
+                echo '<td>';
+                echo '<span>Diagnosis:</span>';
+                echo '<a href="didagnosis.php?id=' . $row["id"] . '" class="btn__app btn__app__one btn__app btn__app__table">ِAdd</a>';
+                echo '</td>';
+                echo '</tr>';
+                echo '<tr>';
+                echo '<td>';
+                echo '<span>Prescription:</span>';
+                echo '<a href="Prescription.php?id=' . $row["id"] . '" class="btn__app btn__app__one btn__app btn__app__table">Add</a>';
+                echo '</td>';
+                echo '</tr>';
+                
+                echo '</tbody>';
+                echo '</table>';
+                echo '</div> <!-- appointment__screen -->';
+                echo '</div> <!-- col-sm-6 -->';
             }
         } else {
-            echo "<tr><td colspan='7'>لا يوجد بيانات متاحة</td></tr>";
+            // إذا لم تكن هناك بيانات متاحة
+            echo "لا توجد بيانات.";
         }
+
+        // إغلاق الاتصال
+        $conn->close();
         ?>
-    </tbody>
-</table>
-
-<?php
-// إغلاق اتصال قاعدة البيانات
-mysqli_close($conn);
-?>
-
-        </div> <!-- appointment__teb -->
-        </div> <!-- col-12 -->
-        </div> <!-- row -->
-        </div> <!-- container -->
+    </div> <!-- row -->
+</div> <!-- container -->
 
         <div class="container">
           <div class="row">

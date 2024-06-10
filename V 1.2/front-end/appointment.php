@@ -49,6 +49,12 @@ $appointments_result = $stmt->get_result();
                         </thead>
                         <tbody id="tBody">
                             <?php
+                            require_once "../back-end/config/conn.php";
+
+                            // استعلام لاستعراض المواعيد
+                            $sql = "SELECT `id`, `patient_id`, `time` FROM `times`";
+                            $appointments_result = $conn->query($sql);
+
                             if ($appointments_result->num_rows > 0) {
                                 while($appointment = $appointments_result->fetch_assoc()) {
                                     $patient_id = $appointment['patient_id'];
@@ -85,6 +91,70 @@ $appointments_result = $stmt->get_result();
             </div> <!-- col-12 -->
         </div> <!-- row -->
     </div> <!-- container -->
+
+    <div class="container">
+        <div class="row">
+            <?php
+            // إعادة الاتصال بقاعدة البيانات واسترجاع البيانات مرة أخرى
+            require_once "../back-end/config/conn.php";
+            $result = $conn->query($sql);
+
+            // إذا كان هناك بيانات متاحة
+            if ($result->num_rows > 0) {
+                // عرض كل موعد في عمود منفصل
+                while ($appointment = $result->fetch_assoc()) {
+                    $patient_id = $appointment['patient_id'];
+                    $patient_sql = "SELECT `id`, `name`, `email`, `phone`, `age` FROM `patient` WHERE `id` = ?";
+                    $patient_stmt = $conn->prepare($patient_sql);
+                    $patient_stmt->bind_param("i", $patient_id);
+                    $patient_stmt->execute();
+                    $patient_result = $patient_stmt->get_result();
+                    if ($patient_result->num_rows > 0) {
+                        $patient = $patient_result->fetch_assoc();
+                        echo '<div class="col-sm-6">';
+                        echo '<div class="appointment__screen">';
+                        echo '<table class="table mt-5 table-bordered table-striped">';
+                        echo '<thead>';
+                        echo '<tr>';
+                        echo '<th scope="col"><span>ID:</span> <span>' . $appointment["id"] . '</span></th>';
+                        echo '</tr>';
+                        echo '</thead>';
+                        echo '<tbody>';
+                        echo '<tr>';
+                        echo '<td><span>Name:</span> <span>' . $patient["name"] . '</span></td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td><span>Email:</span> <span>' . $patient["email"] . '</span></td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td><span>Phone:</span> <span>' . $patient["phone"] . '</span></td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td><span>Age:</span> <span>' . $patient["age"] . '</span></td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td><span>Time:</span> <span>' . $appointment["time"] . '</span></td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td><span>Delete:</span>';
+                        echo '<form method="POST" action="../back-end/delete/book.php">';
+                        echo '<input type="hidden" name="appointment_id" value="' . $appointment["id"] . '">';
+                        echo '<button class="btn__app btn__app__one btn__app btn__app__table" type="submit">Delete</button>';
+                        echo '</form>';
+                        echo '</td>';
+                        echo '</tr>';
+                        echo '</tbody>';
+                        echo '</table>';
+                        echo '</div>'; // appointment__screen
+                        echo '</div>'; // col-sm-6
+                    }
+                }
+            } else {
+                echo '<div class="col-12"><p>No appointments found.</p></div>';
+            }
+            ?>
+        </div> <!-- row -->
+    </div><!-- container -->
 </section> <!-- appointment -->
 
 <!-- start footer -->

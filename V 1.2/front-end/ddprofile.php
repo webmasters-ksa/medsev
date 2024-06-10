@@ -47,7 +47,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                             <div class="col-lg-5 ">
                                 <div class="doctorprofile">
                                     <div class="doctorprofile__img">
-                                        <img src="../back-end/forms/<?php echo $row['image_path']; ?>" alt="Doctor Image">
+                                        <img src="../back-end/upload/<?php echo $row['image_path']; ?>" alt="Doctor Image">
                                     </div>  <!-- doctorprofile__img -->
                                     <div class="doctorprofile__text">
                                         <div class="doctorprofile__text__contact">
@@ -88,13 +88,6 @@ $conn->close();
 ?>
 
 
-
-<?php
-session_start();
-
-// فحص نوع المستخدم المخزن في السيشن
-if(isset($_SESSION['role']) && $_SESSION['role'] === 'patient') {
-?>
 
 <!-- start doctor-app-->
 <section class="doctor-app">
@@ -149,11 +142,6 @@ if(isset($_SESSION['role']) && $_SESSION['role'] === 'patient') {
     </div> <!-- container -->
 </section> <!-- doctor-app -->
 <!-- end doctor-app-->
-
-<?php
-}
-?>
-
 
 
 

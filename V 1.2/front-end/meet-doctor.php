@@ -44,7 +44,7 @@ include "../back-end/includes/navbar.php";
                     echo '<div class="col-lg-4 col-sm-6">';
                     echo '<div class="choose__doctor">';
                     echo '<div class="choose__doctor__img">';
-                    echo '<a href="doctor-profile.php?id=' . $row["id"] . '"><img src="../back-end/upload/' . $row["image_path"] . '" alt="Doctor Image"></a>';
+                    echo '<a href="doctor-profile.php?id=' . $row["id"] . '"><img src="../back-end/forms/' . $row["image_path"] . '" alt="Doctor Image"></a>';
                     echo '</div>'; // choose__doctor__img
                     echo '<div class="choose__doctor__text">';
                     echo '<h2><a href="doctor-profile.php?id=' . $row["id"] . '">' . $row["Name"] . '</a></h2>';
